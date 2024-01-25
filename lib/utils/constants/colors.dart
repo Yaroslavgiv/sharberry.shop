@@ -10,7 +10,7 @@ class TColors {
   static const Gradient linerGradient = LinearGradient(
       begin: Alignment(0.0, 0.0),
       end: Alignment(0.707, -0.707),
-      colors: [ Color(0xFF6a321e),Color(0xFF906b4e)]);
+      colors: [ Color(0xFFE0A8CD),Color(0xFFE5E1EF)]);
 
   // Text colors
   static const Color textPrimary = Color(0xFF333333);

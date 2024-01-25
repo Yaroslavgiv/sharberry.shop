@@ -86,14 +86,14 @@ class TDummyData {
 
   /// -- List of all Categories
   static final List<CategoryModel> categories = [
-    CategoryModel(id: '1', image: TImages.sportIcon, name: 'Sports', isFeatured: true),
-    CategoryModel(id: '5', image: TImages.furnitureIcon, name: 'Furniture', isFeatured: true),
-    CategoryModel(id: '2', image: TImages.electronicsIcon, name: 'Electronics', isFeatured: true),
-    CategoryModel(id: '3', image: TImages.clothIcon, name: 'Clothes', isFeatured: true),
-    CategoryModel(id: '4', image: TImages.animalIcon, name: 'Animals', isFeatured: true),
-    CategoryModel(id: '6', image: TImages.shoeIcon, name: 'Shoes', isFeatured: true),
-    CategoryModel(id: '7', image: TImages.cosmeticsIcon, name: 'Cosmetics', isFeatured: true),
-    CategoryModel(id: '14', image: TImages.jeweleryIcon, name: 'Jewelery', isFeatured: true),
+    CategoryModel(id: '1', image: TImages.sportIcon, name: 'Шары', isFeatured: true),
+    CategoryModel(id: '5', image: TImages.furnitureIcon, name: 'Сюрприз', isFeatured: true),
+    CategoryModel(id: '2', image: TImages.electronicsIcon, name: 'Надпись', isFeatured: true),
+    CategoryModel(id: '3', image: TImages.clothIcon, name: 'Фотозона', isFeatured: true),
+    CategoryModel(id: '4', image: TImages.animalIcon, name: 'Гендер', isFeatured: true),
+    CategoryModel(id: '6', image: TImages.shoeIcon, name: 'Перо', isFeatured: true),
+    CategoryModel(id: '7', image: TImages.cosmeticsIcon, name: 'Аэромозаика', isFeatured: true),
+    CategoryModel(id: '14', image: TImages.jeweleryIcon, name: 'Доставка', isFeatured: true),
 
     ///subcategories
     CategoryModel(id: '8', image: TImages.sportIcon, name: 'Sport Shoes', parentId: '1'),

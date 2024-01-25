@@ -22,7 +22,7 @@ class THeaderCategories extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// -- Heading
-          const TSectionHeading(title: 'Popular Categories', textColor: TColors.white),
+          const TSectionHeading(title: 'Категории', textColor: TColors.white),
           const SizedBox(height: TSizes.spaceBtwItems),
 
           /// -- Categories

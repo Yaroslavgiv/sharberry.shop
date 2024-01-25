@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TProductPriceText extends StatelessWidget {
   const TProductPriceText({
     super.key,
-    this.currencySign = '\Руб ',
+    this.currencySign = '/Руб ',
     required this.price,
     this.isLarge = false,
     this.maxLines = 1,
