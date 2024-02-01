@@ -84,7 +84,7 @@ class ProductController extends GetxController {
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
                   width: 150,
-                  child: OutlinedButton(onPressed: () => Get.back(), child: const Text('Close')),
+                  child: OutlinedButton(onPressed: () => Get.back(), child: const Text('Закрыть')),
                 ),
               ),
             ],
@@ -120,7 +120,7 @@ class ProductController extends GetxController {
       if (smallestPrice.isEqual(largestPrice)) {
         return largestPrice.toString();
       } else {
-        return '$smallestPrice - \$$largestPrice';
+        return '$smallestPrice - \₽$largestPrice';
       }
     }
   }

@@ -61,18 +61,18 @@ class TProductCardVertical extends StatelessWidget {
                   ),
 
                   /// -- Sale Tag
-                  if (salePercentage != null)
-                    Positioned(
-                      top: 12,
-                      left: 0,
-                      child: TRoundedContainer(
-                        backgroundColor: TColors.secondary.withOpacity(0.8),
-                        radius: TSizes.sm,
-                        padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
-                        child: Text('$salePercentage%',
-                            style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
-                      ),
-                    ),
+                  // if (salePercentage != null)
+                  //   Positioned(
+                  //     top: 12,
+                  //     left: 0,
+                  //     child: TRoundedContainer(
+                  //       backgroundColor: TColors.secondary.withOpacity(0.8),
+                  //       radius: TSizes.sm,
+                  //       padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
+                  //       child: Text('$salePercentage%',
+                  //           style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
+                  //     ),
+                  //   ),
 
                   /// -- Favourite Icon Button
                   Positioned(
@@ -93,7 +93,7 @@ class TProductCardVertical extends StatelessWidget {
                 children: [
                   TProductTitleText(title: product.title, smallSize: true),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.small),
+                  // TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.small),
                 ],
               ),
             ),

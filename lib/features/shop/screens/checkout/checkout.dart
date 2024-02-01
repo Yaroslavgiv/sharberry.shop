@@ -80,7 +80,7 @@ class CheckoutScreen extends StatelessWidget {
           width: double.infinity,
           child: ElevatedButton(
             onPressed: () => Get.to(() => const CheckoutSuccessfulScreen()),
-            child: Text('Checkout \$${TPricingCalculator.calculateTotalPrice(subTotal, 'US')}'),
+            child: Text('Оплатить \₽${TPricingCalculator.calculateTotalPrice(subTotal, 'US')}'),
           ),
         ),
       ),
