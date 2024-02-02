@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
-import '../../../../common/widgets/image_text/image_text_vertical.dart';
+// import '../../../../common/widgets/image_text/image_text_vertical.dart';
 import '../../../../common/widgets/products/layouts/grid_layout.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
@@ -21,8 +21,8 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrowIcon: false,
-        title: Text('Search', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [TextButton(onPressed: () => Get.back(), child: const Text('Cancel'))],
+        title: Text('Поиск', style: Theme.of(context).textTheme.headlineMedium),
+        actions: [TextButton(onPressed: () => Get.back(), child: const Text('Выйти'))],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -38,7 +38,7 @@ class SearchScreen extends StatelessWidget {
                   Expanded(
                     child: TextFormField(
                       autofocus: true,
-                      decoration: const InputDecoration(prefixIcon: Icon(Iconsax.search_normal), hintText: 'Search'),
+                      decoration: const InputDecoration(prefixIcon: Icon(Iconsax.search_normal), hintText: 'Поиск'),
                     ),
                   ),
                   const SizedBox(width: TSizes.spaceBtwItems),
@@ -54,24 +54,24 @@ class SearchScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Brands
-              const TSectionHeading(title: 'Brands'),
-              Wrap(
-                children: TDummyData.brands
-                    .map((brand) => Padding(
-                          padding: const EdgeInsets.only(top: TSizes.md),
-                          child: TImageTextVertical(
-                            image: brand.image,
-                            title: brand.name,
-                            textColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
-                            backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
-                          ),
-                        ))
-                    .toList(),
-              ),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              // const TSectionHeading(title: 'Brands'),
+              // Wrap(
+              //   children: TDummyData.brands
+              //       .map((brand) => Padding(
+              //             padding: const EdgeInsets.only(top: TSizes.md),
+              //             child: TImageTextVertical(
+              //               image: brand.image,
+              //               title: brand.name,
+              //               textColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
+              //               backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+              //             ),
+              //           ))
+              //       .toList(),
+              // ),
+              // const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Categories
-              const TSectionHeading(title: 'Categories'),
+              const TSectionHeading(title: 'Категории'),
               const SizedBox(height: TSizes.spaceBtwItems),
               ListView.separated(
                 physics: const NeverScrollableScrollPhysics(),
@@ -118,14 +118,14 @@ class SearchScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const TSectionHeading(title: 'Filter'),
+                  const TSectionHeading(title: 'Фильтр'),
                   IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.close_square))
                 ],
               ),
               const SizedBox(height: TSizes.spaceBtwSections / 2),
 
               /// Sort
-              Text('Sort by', style: Theme.of(context).textTheme.titleLarge),
+              Text('Сортировать', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: TSizes.spaceBtwItems / 2),
 
               TGridLayout(
@@ -143,7 +143,7 @@ class SearchScreen extends StatelessWidget {
 
               /// Categories
 
-              Text('Category', style: Theme.of(context).textTheme.titleLarge),
+              Text('Категории', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: TSizes.spaceBtwItems),
               TGridLayout(
                 mainAxisExtent: 20,
@@ -163,17 +163,17 @@ class SearchScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Sort by Radios
-              Text('Pricing', style: Theme.of(context).textTheme.titleLarge),
+              Text('Прайс', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: TSizes.spaceBtwItems / 2),
               Row(
                 children: [
-                  Expanded(child: TextFormField(decoration: const InputDecoration(hintText: '\$ Lowest'))),
+                  Expanded(child: TextFormField(decoration: const InputDecoration(hintText: '\₽ От'))),
                   const SizedBox(width: TSizes.spaceBtwItems),
-                  Expanded(child: TextFormField(decoration: const InputDecoration(hintText: '\$ Highest'))),
+                  Expanded(child: TextFormField(decoration: const InputDecoration(hintText: '\₽ До'))),
                 ],
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
-              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text('Apply'))),
+              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text('Применить'))),
               const SizedBox(height: TSizes.spaceBtwSections),
             ],
           ),

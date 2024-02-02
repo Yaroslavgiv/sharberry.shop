@@ -8,12 +8,12 @@ import '../../../../features/shop/models/product_model.dart';
 import '../../../../features/shop/models/product_variation_model.dart';
 import '../../../../features/shop/screens/product_detail/product_detail.dart';
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/enums.dart';
+// import '../../../../utils/constants/enums.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../styles/shadows.dart';
 import '../../custom_shapes/containers/rounded_container.dart';
-import '../../texts/t_brand_title_text_with_verified_icon.dart';
+// import '../../texts/t_brand_title_text_with_verified_icon.dart';
 import '../../texts/t_product_price_text.dart';
 import '../../texts/t_product_title_text.dart';
 import '../favourite_icon/favourite_icon.dart';
@@ -26,7 +26,7 @@ class TProductCardVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cartController = CartController.instance;
-    final salePercentage = ProductController.instance.calculateSalePercentage(product.price, product.salePrice);
+    // final salePercentage = ProductController.instance.calculateSalePercentage(product.price, product.salePrice);
     final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: () => Get.to(() => ProductDetail(product: product)),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../../common/widgets/brands/brand_show_case.dart';
+// import '../../../../../common/widgets/brands/brand_show_case.dart';
 import '../../../../../common/widgets/products/layouts/grid_layout.dart';
 import '../../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../../common/widgets/texts/section_heading.dart';
@@ -17,7 +17,7 @@ class TCategoryTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = StoreController.instance;
-    final categoryBrands = controller.getCategoryBrands(category.id);
+    // final categoryBrands = controller.getCategoryBrands(category.id);
     final categoryProducts = controller.getCategoryProducts(category.id);
     return ListView(
       shrinkWrap: true,
@@ -28,22 +28,22 @@ class TCategoryTab extends StatelessWidget {
           child: Column(
             children: [
               /// -- Brands
-              Column(
-                children: categoryBrands
-                    .map((brand) => TBrandShowcase(
-                          brand: brand,
-                          images: controller.getBrandProducts(brand.id).map((e) => e.thumbnail).toList(),
-                        ))
-                    .toList(),
-              ),
-              const SizedBox(height: TSizes.spaceBtwSections * 2),
+              // Column(
+              //   children: categoryBrands
+              //       .map((brand) => TBrandShowcase(
+              //             brand: brand,
+              //             images: controller.getBrandProducts(brand.id).map((e) => e.thumbnail).toList(),
+              //           ))
+              //       .toList(),
+              // ),
+              // const SizedBox(height: TSizes.spaceBtwSections * 2),
 
               /// -- Products You May Like
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TSectionHeading(
-                    title: 'You might like',
+                    title: 'Подборка для вас',
                     showActionButton: true,
                     onPressed: () => Get.to(AllProducts(title: category.name, products: categoryProducts)),
                   ),

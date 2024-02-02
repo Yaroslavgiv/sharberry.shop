@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/widgets/appbar/tabbar.dart';
-import '../../../../common/widgets/brands/brand_products_count.dart';
+// import '../../../../common/widgets/brands/brand_products_count.dart';
 import '../../../../common/widgets/products/cart/cart_menu_icon.dart';
-import '../../../../common/widgets/products/layouts/grid_layout.dart';
-import '../../../../common/widgets/texts/section_heading.dart';
+// import '../../../../common/widgets/products/layouts/grid_layout.dart';
+// import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
-import '../../controllers/dummy_data.dart';
+// import '../../controllers/dummy_data.dart';
 import '../../controllers/store_controller.dart';
-import '../brand/all_brands.dart';
-import '../brand/brand.dart';
+// import '../brand/all_brands.dart';
+// import '../brand/brand.dart';
 import '../cart/cart.dart';
 import '../home/widgets/header_search_container.dart';
 import 'widgets/category_tab.dart';
@@ -34,7 +34,7 @@ class StoreScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Padding(
             padding: const EdgeInsets.only(left: TSizes.defaultSpace / 1.5),
-            child: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+            child: Text('Категории', style: Theme.of(context).textTheme.headlineMedium),
           ),
           actions: [
             Padding(
@@ -52,7 +52,7 @@ class StoreScreen extends StatelessWidget {
                 floating: true,
                 backgroundColor: dark ? TColors.black : TColors.white,
                 // Space between Appbar and TabBar. WithIn this height we have added [Search bar] and [Featured brands]
-                expandedHeight: 440,
+                expandedHeight: TSizes.imageCarouselHeight,
 
                 /// -- Search & Featured Store
                 flexibleSpace: Padding(
@@ -60,34 +60,34 @@ class StoreScreen extends StatelessWidget {
                   child: ListView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    children: [
+                    children: const [
                       /// -- Search bar
-                      const SizedBox(height: TSizes.spaceBtwItems),
-                      const THeaderSearchContainer(showBorder: true),
-                      const SizedBox(height: TSizes.spaceBtwSections),
+                      SizedBox(height: TSizes.spaceBtwItems),
+                      THeaderSearchContainer(showBorder: true),
+                      // const SizedBox(height: TSizes.spaceBtwSections),
 
                       /// -- Featured Brands
-                      TSectionHeading(
-                        title: 'Featured Brands',
-                        showActionButton: true,
-                        onPressed: () => Get.to(() => const AllBrandsScreen()),
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+                      // TSectionHeading(
+                      //   title: 'Featured Brands',
+                      //   showActionButton: true,
+                      //   onPressed: () => Get.to(() => const AllBrandsScreen()),
+                      // ),
+                      // const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
                       /// -- Brands
-                      TGridLayout(
-                        itemCount: 4,
-                        mainAxisExtent: 80,
-                        itemBuilder: (_, index) {
-                          final brand = TDummyData.brands[index];
-                          return TBrandWithProductsCount(
-                            brand: brand,
-                            showBorder: true,
-                            onTap: () => Get.to(() => BrandScreen(brand: brand)),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwSections),
+                      // TGridLayout(
+                      //   itemCount: 4,
+                      //   mainAxisExtent: 80,
+                      //   itemBuilder: (_, index) {
+                      //     final brand = TDummyData.brands[index];
+                      //     return TBrandWithProductsCount(
+                      //       brand: brand,
+                      //       showBorder: true,
+                      //       onTap: () => Get.to(() => BrandScreen(brand: brand)),
+                      //     );
+                      //   },
+                      // ),
+                      // const SizedBox(height: TSizes.spaceBtwSections),
                     ],
                   ),
                 ),
