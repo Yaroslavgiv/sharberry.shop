@@ -119,7 +119,7 @@ class TImages {
   static const String productImage66 = "assets/images/products/leather_jacket_3.png";
   static const String productImage67 = "assets/images/products/leather_jacket_4.png";
   static const String productImage68 = "assets/images/products/tshirt_blue_without_collar_back.png";
-  static const String productImage69 = "assets/images/products/tshirt_blue_without_collar_front.png";
+  static const String productImage69 = "assets/images/products/red_hard.png";
   static const String productImage70 = "assets/images/products/iphone_12_red.png";
   static const String productImage71 = "assets/images/products/iphone_12_blue.png";
   static const String productImage72 = "assets/images/products/iphone_12_green.png";
@@ -140,7 +140,7 @@ class TImages {
   //Banners
   static const String promoBanner1 = "assets/images/banners/banners_1.png";
   static const String promoBanner2 = "assets/images/products/promo-banner-2.png";
-  static const String promoBanner3 = "assets/images/products/promo-banner-3.png";
+  static const String promoBanner3 = "assets/images/banners/banner_2.png";
   static const String banner1 = "assets/images/banners/banner_1.jpg";
   static const String banner2 = "assets/images/banners/banner_2.jpg";
   static const String banner3 = "assets/images/banners/banner_3.jpg";

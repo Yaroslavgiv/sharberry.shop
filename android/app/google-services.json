@@ -12,7 +12,20 @@
           "package_name": "com.example.sharberry_shop"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "370279495213-i7jll33pqchh7k9kvaf35fkkp8a8va80.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sharberry_shop",
+            "certificate_hash": "82c6ff38022d209fcc2cc8414e7566695e72eed0"
+          }
+        },
+        {
+          "client_id": "370279495213-ec70v7v17p4uedodq85nsu1rbufpmk55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA-qlHfXvLMK1a6McWw0ETq4w3Gu40mR34"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370279495213-ec70v7v17p4uedodq85nsu1rbufpmk55.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "370279495213-hsirbtq9evsntqtno144afnr68mpm3u7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sharberryShop"
+              }
+            }
+          ]
         }
       }
     }

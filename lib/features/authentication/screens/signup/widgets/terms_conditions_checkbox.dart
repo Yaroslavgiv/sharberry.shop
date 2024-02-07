@@ -17,7 +17,7 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
       children: [
         // Wrap in a Sized box to remove extra padding
         SizedBox(width: 24, height: 24, child: Checkbox(value: true, onChanged: (value){})),
-        const SizedBox(width: TSizes.md),
+        const SizedBox(height: TSizes.md),
         Text.rich(
           TextSpan(
             children: [

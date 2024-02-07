@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +30,10 @@ class LoginScreen extends StatelessWidget {
               /// Create Account Button
               SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(onPressed: () => Get.to(() => const SignupScreen()), child: const Text(TTexts.createAccount)),
+                child: OutlinedButton(
+                  onPressed: () => Get.to(() => const SignupScreen()),
+                  child: const Text(TTexts.createAccount),
+                ),
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
 
