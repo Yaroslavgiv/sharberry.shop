@@ -21,6 +21,8 @@ dependencies:
   url_launcher: ^6.1.12
   flutter_native_splash: ^2.3.8
   smooth_page_indicator: ^1.1.0
+  lottie: ^3.0.0
+  connectivity_plus: ^5.0.2
 
   # Icons
   iconsax: ^0.0.8

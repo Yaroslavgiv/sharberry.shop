@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../features/authentication/controllers/signup/network_manager.dart';
 import '../features/shop/controllers/brand_controller.dart';
 import '../features/personalization/controllers/address_controller.dart';
 import '../features/personalization/controllers/user_controller.dart';
@@ -11,6 +12,7 @@ import '../features/shop/controllers/product_controller.dart';
 class GeneralBindings extends Bindings {
   @override
   void dependencies() {
+    Get.put(NetworkManager());
     /// -- Product Controllers
     Get.put(ProductController());
     Get.put(CartController());

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'bindings/general_bindings.dart';
-import 'features/authentication/screens/onboarding/onboarding.dart';
+// import 'features/authentication/screens/onboarding/onboarding.dart';
 import 'utils/constants/colors.dart';
 import 'utils/constants/text_strings.dart';
 import 'utils/theme/theme.dart';
