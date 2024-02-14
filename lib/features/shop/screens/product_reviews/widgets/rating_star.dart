@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:iconsax/iconsax.dart';
 
-class RatingStars extends StatelessWidget {
-  const RatingStars({Key? key, required this.value, required this.size}) : super(key: key);
-  final double value;
-  final double size;
+import '../../../../../utils/constants/colors.dart';
+
+class TRatingBarIndicator extends StatelessWidget {
+  const TRatingBarIndicator({
+    super.key,
+    required this.rating,
+  });
+
+  final double rating;
 
   @override
   Widget build(BuildContext context) {
     return RatingBarIndicator(
-      rating: value,
-      itemBuilder: (context, index) => Icon(
-        Icons.star,
-        color: Colors.blue[700],
-      ),
-      itemCount: 5,
-      itemSize: size,
-      direction: Axis.horizontal,
+      rating: rating,
+      itemSize: 20,
+      unratedColor: TColors.grey,
+      itemBuilder: (_, __) => const Icon(Iconsax.star1, color: TColors.primary),
     );
   }
 }

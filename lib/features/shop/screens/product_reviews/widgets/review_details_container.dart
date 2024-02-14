@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
@@ -9,8 +8,8 @@ import '../../../models/product_review_model.dart';
 import 'rating_star.dart';
 
 
-class ReviewDetailsContainer extends StatelessWidget {
-  const ReviewDetailsContainer({Key? key, required this.productReview}) : super(key: key);
+class UserReviewCard extends StatelessWidget {
+  const UserReviewCard({Key? key, required this.productReview}) : super(key: key);
 
   final ProductReviewModel productReview;
 
@@ -39,7 +38,7 @@ class ReviewDetailsContainer extends StatelessWidget {
           children: [
 
             ///Review Stars
-            RatingStars(value: productReview.rating, size: 15.0),
+            TRatingBarIndicator(rating: productReview.rating),
 
             ///Review Date
             const SizedBox(width: 10.0),

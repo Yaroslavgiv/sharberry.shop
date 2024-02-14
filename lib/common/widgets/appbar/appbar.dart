@@ -2,48 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/device/device_utility.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
-  /// Custom appbar to achieve desired design goal.
-  /// Bool type [showBackArrowIcon] to hide or show leading Icon with a default back Icon.
-  /// For Custom Leading Icon, pass icon to [leadingIcon] property.
-  /// [title] used to set custom title of the appbar.
-  /// [actions] you can pass any list of desired actions List<Widgets>
-  /// You can customize Horizontal Padding of Appbar inside this Widget.
+  /// Custom appbar for achieving a desired design goal.
+  /// - Set [title] for a custom title.
+  /// - [showBackArrow] to toggle the visibility of the back arrow.
+  /// - [leadingIcon] for a custom leading icon.
+  /// - [leadingOnPressed] callback for the leading icon press event.
+  /// - [actions] for adding a list of action widgets.
+  /// - Horizontal padding of the appbar can be customized inside this widget.
   const TAppBar({
     super.key,
-    this.leadingIcon,
     this.title,
     this.actions,
-    this.leadingIconOnPressed,
-    this.showBackArrowIcon = true,
+    this.leadingIcon,
+    this.leadingOnPressed,
+    this.showBackArrow = false,
   });
 
-  final bool showBackArrowIcon;
-  final IconData? leadingIcon;
   final Widget? title;
+  final bool showBackArrow;
+  final IconData? leadingIcon;
   final List<Widget>? actions;
-  final VoidCallback? leadingIconOnPressed;
+  final VoidCallback? leadingOnPressed;
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
       child: AppBar(
-        // Custom back arrow
         automaticallyImplyLeading: false,
-        leading: showBackArrowIcon
-            ? IconButton(
-                onPressed: leadingIconOnPressed ?? (showBackArrowIcon ? () => Get.back() : null),
-                icon: Icon(
-                  // If leading icon is not given, check back arrow if visible then show your custom icon here.
-                  leadingIcon ?? (showBackArrowIcon ? Iconsax.arrow_left : null),
-                  color: THelperFunctions.isDarkMode(context) ? kDefaultIconLightColor : kDefaultIconDarkColor,
-                ),
-              )
+        leading: showBackArrow
+            ? IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left, color: dark ? TColors.white : TColors.dark))
+            : leadingIcon != null
+            ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon))
             : null,
         title: title,
         actions: actions,

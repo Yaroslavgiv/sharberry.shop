@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'bindings/general_bindings.dart';
 // import 'features/authentication/screens/onboarding/onboarding.dart';
+import 'routes/app_routes.dart';
 import 'utils/constants/colors.dart';
 import 'utils/constants/text_strings.dart';
 import 'utils/theme/theme.dart';
@@ -19,8 +20,7 @@ class App extends StatelessWidget {
         darkTheme: TAppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         initialBinding: GeneralBindings(),
-        // home: const HomeMenu(),
-        // home: const OnBoardingScreen(),
+        getPages: AppRoutes.pages,
         home: const Scaffold(
           backgroundColor: TColors.buttonPrimary,
           body: Center(

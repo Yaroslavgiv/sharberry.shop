@@ -5,14 +5,14 @@ class TSectionHeading extends StatelessWidget {
     super.key,
     this.onPressed,
     this.textColor,
-    this.buttonTitle = 'Всё',
+    this.buttonTitle = 'View all',
     required this.title,
-    this.showActionButton = false,
+    this.showActionButton = true,
   });
 
-  final String title, buttonTitle;
   final Color? textColor;
   final bool showActionButton;
+  final String title, buttonTitle;
   final void Function()? onPressed;
 
   @override
@@ -20,8 +20,11 @@ class TSectionHeading extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor)),
-        showActionButton ? TextButton(onPressed: onPressed, child: Text(buttonTitle)) : const SizedBox()
+        Text(title,
+            style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis),
+        if (showActionButton) TextButton(onPressed: onPressed, child: Text(buttonTitle))
       ],
     );
   }

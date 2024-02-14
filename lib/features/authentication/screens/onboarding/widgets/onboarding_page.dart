@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/utils.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
@@ -7,8 +6,13 @@ import '../../../../../utils/helpers/helper_functions.dart';
 
 
 class OnBoardingPage extends StatelessWidget {
-  /// Custom Page Design Widget for On-Boarding Screens. Pass your image, title and subTitle.
-  const OnBoardingPage({super.key, required this.image, required this.title, required this.subTitle});
+  /// Widget for displaying content on an onboarding page.
+  const OnBoardingPage({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subTitle,
+  });
 
   final String image, title, subTitle;
 
@@ -18,13 +22,16 @@ class OnBoardingPage extends StatelessWidget {
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
         children: [
+          // Display the onboarding image
           Image(
             width: THelperFunctions.screenWidth() * 0.8,
             height: THelperFunctions.screenHeight() * 0.6,
             image: AssetImage(image),
           ),
-          Text(title.capitalize!, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
-          const SizedBox(height: TSizes.md),
+          // Display the onboarding title
+          Text(title, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+          const SizedBox(height: TSizes.spaceBtwItems),
+          // Display the onboarding subtitle
           Text(subTitle, style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center),
         ],
       ),

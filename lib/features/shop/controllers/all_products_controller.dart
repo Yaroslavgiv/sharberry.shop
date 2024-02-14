@@ -1,18 +1,30 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
+import '../../../data/repositories/product/product_repository.dart';
+import '../../../utils/popups/loaders.dart';
 import '../models/product_model.dart';
 
 class AllProductsController extends GetxController {
   static AllProductsController get instance => Get.find();
 
-  // Variables used to keep the selected features.
-  final RxList<ProductModel> products = <ProductModel>[].obs;
+  final repository = ProductRepository.instance;
   final RxString selectedSortOption = 'Name'.obs;
-  final RxString selectedFilter = ''.obs;
+  final RxList<ProductModel> products = <ProductModel>[].obs;
+
+  Future<List<ProductModel>> fetchProductsByQuery(Query? query) async {
+    try {
+      if(query == null) return [];
+      return await repository.fetchProductsByQuery(query);
+    } catch (e) {
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      return [];
+    }
+  }
 
   void assignProducts(List<ProductModel> products) {
     // Assign products to the 'products' list
-    this.products.value = products;
+    this.products.assignAll(products);
     sortProducts('Name');
   }
 
@@ -34,24 +46,18 @@ class AllProductsController extends GetxController {
         break;
       case 'Sale':
         products.sort((a, b) {
-          if (a.salePrice != null && b.salePrice != null) {
-            return a.salePrice!.compareTo(b.salePrice!);
-          } else if (a.salePrice != null) {
+          if (b.salePrice > 0) {
+            return b.salePrice.compareTo(a.salePrice);
+          } else if (a.salePrice > 0) {
             return -1;
-          } else if (b.salePrice != null) {
+          } else {
             return 1;
           }
-          return 0;
         });
         break;
       default:
         // Default sorting option: Name
         products.sort((a, b) => a.title.compareTo(b.title));
     }
-  }
-
-  void applyFilter(String filter) {
-    selectedFilter.value = filter;
-    // Apply a filter to the 'products' list based on the selected filter
   }
 }

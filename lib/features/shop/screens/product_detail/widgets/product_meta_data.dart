@@ -8,7 +8,7 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/enums.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
-import '../../../controllers/product_controller.dart';
+import '../../../controllers/product/product_controller.dart';
 import '../../../models/product_model.dart';
 
 class TProductMetaData extends StatelessWidget {
@@ -47,7 +47,7 @@ class TProductMetaData extends StatelessWidget {
 
 
             // Actual Price if sale price not null.
-            if (product.productVariations == null && product.salePrice != null)
+            if ((product.productVariations == null || product.productVariations!.isEmpty) && product.salePrice> 0.0)
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

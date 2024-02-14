@@ -1,16 +1,14 @@
-import 'package:capped_progress_indicator/capped_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/device/device_utility.dart';
 
-
-
-class RatingProgressIndicator extends StatelessWidget {
-  const RatingProgressIndicator({
-    Key? key,
+class TRatingProgressIndicator extends StatelessWidget {
+  const TRatingProgressIndicator({
+    super.key,
     required this.text,
     required this.value,
-  }) : super(key: key);
+  });
 
   final String text;
   final double value;
@@ -18,26 +16,20 @@ class RatingProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(text, style: const TextStyle(fontSize: 14.0)),
-        const SizedBox(width: 20),
+        Expanded(flex: 1, child: Text(text, style: Theme.of(context).textTheme.bodyMedium)),
         Expanded(
-          flex: 2,
+          flex: 11,
           child: SizedBox(
-            height: 11.0,
-            width: TDeviceUtils.getScreenWidth(context) * 0.5,
-            child: LinearCappedProgressIndicator(
-              cornerRadius: 7,
-              backgroundColor: Colors.grey[300],
-              valueColor: AlwaysStoppedAnimation(Colors.blue[700]),
-              minHeight: 25,
+            width: TDeviceUtils.getScreenWidth(context) * 0.8,
+            child: LinearProgressIndicator(
               value: value,
+              minHeight: 11,
+              backgroundColor: TColors.grey,
+              borderRadius: BorderRadius.circular(7),
+              valueColor: const AlwaysStoppedAnimation(TColors.primary),
             ),
           ),
-        ),
-        const SizedBox(
-          height: 22.0,
         ),
       ],
     );

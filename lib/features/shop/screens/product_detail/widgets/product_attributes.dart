@@ -5,17 +5,18 @@ import '../../../../../common/widgets/texts/section_heading.dart';
 import '../../../../../common/widgets/texts/t_product_price_text.dart';
 import '../../../../../common/widgets/texts/t_product_title_text.dart';
 import '../../../../../utils/constants/sizes.dart';
-import '../../../controllers/product_controller.dart';
+import '../../../controllers/product/variation_controller.dart';
 import '../../../models/product_model.dart';
 
-class ProductAttributes extends StatelessWidget {
-  const ProductAttributes({super.key, required this.product});
+class TProductAttributes extends StatelessWidget {
+  const TProductAttributes({super.key, required this.product});
 
   final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
-    final controller = ProductController.instance;
+    final controller = VariationController.instance;
+    controller.resetSelectedAttributes();
     return Obx(
       () => Column(
         children: [
@@ -27,7 +28,7 @@ class ProductAttributes extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const TSectionHeading(title: 'Variation: '),
+                    const TSectionHeading(title: 'Variation: ', showActionButton: false),
                     const SizedBox(width: TSizes.spaceBtwItems),
 
                     /// Price
@@ -38,24 +39,21 @@ class ProductAttributes extends StatelessWidget {
                           children: [
                             // Actual Price if sale price not null.
                             const TProductTitleText(title: 'Price : ', smallSize: true),
-                            if (controller.selectedVariation.value.salePrice != null)
+                            if (controller.selectedVariation.value.salePrice > 0)
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const SizedBox(width: TSizes.spaceBtwItems),
                                   Text(
                                     controller.selectedVariation.value.price.toString(),
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleSmall!
-                                        .apply(decoration: TextDecoration.lineThrough),
+                                    style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
                                   ),
                                   const SizedBox(width: TSizes.spaceBtwItems)
                                 ],
                               ),
                             // Sale Price if sale price not null Else Simple Price.
                             TProductPriceText(
-                              price: controller.selectedVariation.value.salePrice != null
+                              price: controller.selectedVariation.value.salePrice > 0
                                   ? controller.selectedVariation.value.salePrice.toString()
                                   : controller.selectedVariation.value.price.toString(),
                             ),
@@ -92,7 +90,7 @@ class ProductAttributes extends StatelessWidget {
                       // attribute = Product Single Attribute [Name: Color, Values: [Green, Blue, Orange]]
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TSectionHeading(title: attribute.name ?? ''),
+                        TSectionHeading(title: attribute.name ?? '', showActionButton: false),
                         const SizedBox(height: TSizes.spaceBtwItems / 2),
                         Obx(
                           () => Wrap(

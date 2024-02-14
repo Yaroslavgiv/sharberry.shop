@@ -4,8 +4,8 @@ import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../custom_shapes/containers/rounded_container.dart';
 
-class TCouponCodeWidget extends StatelessWidget {
-  const TCouponCodeWidget({super.key});
+class TCouponCode extends StatelessWidget {
+  const TCouponCode({super.key});
 
   @override
   Widget build(BuildContext context) {

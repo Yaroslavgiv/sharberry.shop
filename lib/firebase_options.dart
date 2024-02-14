@@ -25,7 +25,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -70,16 +73,5 @@ class DefaultFirebaseOptions {
     androidClientId: '370279495213-i7jll33pqchh7k9kvaf35fkkp8a8va80.apps.googleusercontent.com',
     iosClientId: '370279495213-hsirbtq9evsntqtno144afnr68mpm3u7.apps.googleusercontent.com',
     iosBundleId: 'com.example.sharberryShop',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCmnFN4qD97ZXUtOptAKSefx1Q_TKw1wLI',
-    appId: '1:370279495213:ios:84966a89ce7ddbf1d9eaa4',
-    messagingSenderId: '370279495213',
-    projectId: 'sharberry-shop-86867',
-    storageBucket: 'sharberry-shop-86867.appspot.com',
-    androidClientId: '370279495213-i7jll33pqchh7k9kvaf35fkkp8a8va80.apps.googleusercontent.com',
-    iosClientId: '370279495213-t0avtg51o36rj0vcjhavb21hd7ma0u7r.apps.googleusercontent.com',
-    iosBundleId: 'com.example.sharberryShop.RunnerTests',
   );
 }

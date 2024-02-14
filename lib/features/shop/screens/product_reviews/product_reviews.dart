@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
@@ -15,7 +14,7 @@ class ProductReviewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// -- Appbar
-      appBar: const TAppBar(title: Text('Reviews & Ratings')),
+      appBar: const TAppBar(title: Text('Reviews & Ratings'), showBackArrow: true),
 
       /// -- Body
       body: SingleChildScrollView(
@@ -25,19 +24,22 @@ class ProductReviewsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// -- Reviews List
-              const Text(
-                  "Ratings and reviews are verified and are from people who use the same type of device that you use."),
-              const SizedBox(height: 10.0),
-              const RatingAndProgressIndicator(),
-              const RatingStars(value: 2.5, size: 20.0),
+              const Text("Ratings and reviews are verified and are from people who use the same type of device that you use."),
+              const SizedBox(height: TSizes.spaceBtwItems),
+
+              /// Overall Product Ratings
+              const TOverallProductRating(),
+              const TRatingBarIndicator(rating: 3.5),
               const Text("12,611"),
               const SizedBox(height: TSizes.spaceBtwSections),
+
+              /// User Reviews List
               ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemBuilder: (_, index) => ReviewDetailsContainer(productReview: TDummyData.productReviews[index]),
-                separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
                 itemCount: TDummyData.productReviews.length,
+                physics: const NeverScrollableScrollPhysics(),
+                separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwSections),
+                itemBuilder: (_, index) => UserReviewCard(productReview: TDummyData.productReviews[index]),
               )
             ],
           ),

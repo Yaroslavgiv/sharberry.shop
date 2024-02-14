@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../../common/widgets/appbar/appbar.dart';
@@ -7,18 +8,18 @@ import '../../../../../common/widgets/products/favourite_icon/favourite_icon.dar
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
-import '../../../controllers/product_controller.dart';
+import '../../../controllers/product/images_controller.dart';
 import '../../../models/product_model.dart';
 
-
-class ProductImageSlider extends StatelessWidget {
-  const ProductImageSlider({super.key, required this.product});
+class TProductImageSlider extends StatelessWidget {
+  const TProductImageSlider({super.key, required this.product, this.isNetworkImage = true});
 
   final ProductModel product;
+  final bool isNetworkImage;
 
   @override
   Widget build(BuildContext context) {
-    final controller = ProductController.instance;
+    final controller = ImagesController.instance;
     final isDark = THelperFunctions.isDarkMode(context);
     final images = controller.getAllProductImages(product);
     return TCurvedEdgesWidget(
@@ -31,25 +32,24 @@ class ProductImageSlider extends StatelessWidget {
               height: 400,
               child: Padding(
                 padding: const EdgeInsets.all(TSizes.defaultSpace * 2),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Center(
-                        child: SizedBox(
-                          child: Obx(() {
-                            final image = controller.selectedProductImage.value.isEmpty
-                                ? product.thumbnail
-                                : controller.selectedProductImage.value;
-                            return GestureDetector(
-                                onTap: () => controller.showEnlargedImage(image),
-                                child: Image(image: AssetImage(image), fit: BoxFit.contain));
-                          }),
-                        ),
-                      ),
-                    ),
-                  ],
+                child: Center(
+                  child: Obx(
+                    () {
+                      final image =
+                          controller.selectedProductImage.value.isEmpty ? product.thumbnail : controller.selectedProductImage.value;
+                      return GestureDetector(
+                        onTap: () => controller.showEnlargedImage(image),
+                        child: isNetworkImage
+                            ? CachedNetworkImage(
+                                imageUrl: image,
+                                progressIndicatorBuilder: (_, __, downloadProgress) =>
+                                    CircularProgressIndicator(value: downloadProgress.progress, color: TColors.primary),
+                                errorWidget: (_, __, ___) => const Icon(Icons.error),
+                              )
+                            : Image(image: AssetImage(image)),
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
@@ -62,24 +62,24 @@ class ProductImageSlider extends StatelessWidget {
               child: SizedBox(
                 height: 80,
                 child: ListView.separated(
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  // new
                   shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems),
                   itemCount: images.length,
+                  scrollDirection: Axis.horizontal,
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems),
                   itemBuilder: (_, index) {
                     return Obx(
                       () {
                         final imageSelected = controller.selectedProductImage.value == images[index];
                         return TRoundedImage(
-                          onPressed: () => controller.selectedProductImage.value = images[index],
+                          isNetworkImage: isNetworkImage,
                           width: 80,
                           fit: BoxFit.contain,
+                          imageUrl: images[index],
                           padding: const EdgeInsets.all(TSizes.sm),
                           backgroundColor: isDark ? TColors.dark : TColors.white,
+                          onPressed: () => controller.selectedProductImage.value = images[index],
                           border: Border.all(color: imageSelected ? TColors.primary : Colors.transparent),
-                          imageUrl: images[index],
                         );
                       },
                     );
@@ -89,12 +89,7 @@ class ProductImageSlider extends StatelessWidget {
             ),
 
             /// Appbar Icons
-            TAppBar(
-              showBackArrowIcon: true,
-              actions: [
-                TFavouriteIcon(productId: product.id),
-              ],
-            ),
+            TAppBar(showBackArrow: true, actions: [TFavouriteIcon(productId: product.id)]),
           ],
         ),
       ),

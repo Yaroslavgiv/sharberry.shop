@@ -6,8 +6,8 @@ import '../../../../utils/constants/sizes.dart';
 import '../../icons/t_circular_icon.dart';
 
 
-class TAddRemoveCartButtons extends StatelessWidget {
-  const TAddRemoveCartButtons({
+class TProductQuantityWithAddRemoveButton extends StatelessWidget {
+  const TProductQuantityWithAddRemoveButton({
     super.key,
     required this.add,
     this.width = 40,

@@ -1,8 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../features/shop/controllers/product_controller.dart';
+import '../../../../features/shop/controllers/product/favourites_controller.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../icons/t_circular_icon.dart';
 
@@ -20,7 +21,7 @@ class TFavouriteIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = ProductController.instance;
+    final controller = Get.put(FavouritesController());
     return Obx(
       () => TCircularIcon(
         icon: controller.isFavourite(productId) ? Iconsax.heart5 : Iconsax.heart,
