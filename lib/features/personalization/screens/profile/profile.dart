@@ -20,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text('Profile', style: Theme.of(context).textTheme.headlineSmall),
+        title: Text('Профиль', style: Theme.of(context).textTheme.headlineSmall),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,7 +43,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: controller.imageUploading.value ? () {} : () => controller.uploadUserProfilePicture(),
-                      child: const Text('Change Profile Picture'),
+                      child: const Text('Изменить изображение профиля'),
                     ),
                   ],
                 ),
@@ -51,26 +51,26 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems / 2),
               const Divider(),
               const SizedBox(height: TSizes.spaceBtwItems),
-              const TSectionHeading(title: 'Profile Information', showActionButton: false),
+              const TSectionHeading(title: 'Информация профиля', showActionButton: false),
               const SizedBox(height: TSizes.spaceBtwItems),
-              TProfileMenu(onPressed: () => Get.to(() => const ChangeName()), title: 'Name', value: controller.user.value.fullName),
-              TProfileMenu(onPressed: () {}, title: 'Username', value: controller.user.value.username),
+              TProfileMenu(onPressed: () => Get.to(() => const ChangeName()), title: 'Имя', value: controller.user.value.fullName),
+              TProfileMenu(onPressed: () {}, title: 'Никнэйм', value: controller.user.value.username),
               const SizedBox(height: TSizes.spaceBtwItems),
               const Divider(),
               const SizedBox(height: TSizes.spaceBtwItems),
-              const TSectionHeading(title: 'Personal Information', showActionButton: false),
+              const TSectionHeading(title: 'Персональная информация', showActionButton: false),
               const SizedBox(height: TSizes.spaceBtwItems),
-              TProfileMenu(onPressed: () {}, title: 'User ID', value: '45689', icon: Iconsax.copy),
+              // TProfileMenu(onPressed: () {}, title: 'User ID', value: '45689', icon: Iconsax.copy),
               TProfileMenu(onPressed: () {}, title: 'E-mail', value: controller.user.value.email),
-              TProfileMenu(onPressed: () {}, title: 'Phone Number', value: controller.user.value.phoneNumber),
-              TProfileMenu(onPressed: () {}, title: 'Gender', value: 'Male'),
-              TProfileMenu(onPressed: () {}, title: 'Date of Birth', value: '1 Jan, 1900'),
+              TProfileMenu(onPressed: () {}, title: 'Телефон', value: controller.user.value.phoneNumber),
+              // TProfileMenu(onPressed: () {}, title: 'Пол', value: ''),
+              // TProfileMenu(onPressed: () {}, title: 'Дата рождения', value: ''),
               const Divider(),
               const SizedBox(height: TSizes.spaceBtwItems),
               Center(
                 child: TextButton(
                     onPressed: () => controller.deleteAccountWarningPopup(),
-                    child: const Text('Close Account', style: TextStyle(color: Colors.red))),
+                    child: const Text('Выйти с аккаунта', style: TextStyle(color: Colors.red))),
               )
             ],
           ),

@@ -37,7 +37,7 @@ class AddressController extends GetxController {
       selectedAddress.value = addresses.firstWhere((element) => element.selectedAddress, orElse: () => AddressModel.empty());
       return addresses;
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Address not found', message: e.toString());
+      TLoaders.errorSnackBar(title: 'Адрес не найден', message: e.toString());
       return [];
     }
   }
@@ -56,7 +56,7 @@ class AddressController extends GetxController {
       // Set the "selected" field to true for the newly selected address
       await addressRepository.updateSelectedField(AuthenticationRepository.instance.getUserID, selectedAddress.value.id, true);
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Error in Selection', message: e.toString());
+      TLoaders.errorSnackBar(title: 'Ошибка при выборе', message: e.toString());
     }
   }
 
@@ -64,7 +64,7 @@ class AddressController extends GetxController {
   addNewAddresses() async {
     try {
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('Storing Address...', TImages.docerAnimation);
+      TFullScreenLoader.openLoadingDialog('Ошибка при выборе...', TImages.docerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -101,7 +101,7 @@ class AddressController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Message
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'Your address has been saved successfully.');
+      TLoaders.successSnackBar(title: 'Поздравляем', message: 'Ваш адрес был успешно сохранен.');
 
       // Refresh Addresses Data
       refreshData.toggle();
@@ -114,7 +114,7 @@ class AddressController extends GetxController {
     } catch (e) {
       // Remove Loader
       TFullScreenLoader.stopLoading();
-      TLoaders.errorSnackBar(title: 'Address not found', message: e.toString());
+      TLoaders.errorSnackBar(title: 'Адрес не найден', message: e.toString());
     }
   }
 
@@ -127,7 +127,7 @@ class AddressController extends GetxController {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TSectionHeading(title: 'Select Address'),
+            const TSectionHeading(title: 'Выберите адрес'),
             FutureBuilder(
               future: allUserAddresses(),
               builder: (_, snapshot) {
@@ -151,7 +151,7 @@ class AddressController extends GetxController {
             const SizedBox(height: TSizes.defaultSpace * 2),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: () => Get.to(() => const AddNewAddressScreen()), child: const Text('Add new address')),
+              child: ElevatedButton(onPressed: () => Get.to(() => const AddNewAddressScreen()), child: const Text('Добавте новый адрес')),
             ),
           ],
         ),

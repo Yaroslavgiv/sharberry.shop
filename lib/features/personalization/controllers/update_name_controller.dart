@@ -34,7 +34,7 @@ class UpdateNameController extends GetxController {
   Future<void> updateUserName() async {
     try {
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('We are updating your information...', TImages.docerAnimation);
+      TFullScreenLoader.openLoadingDialog('Мы обновляем вашу информацию...', TImages.docerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -50,7 +50,7 @@ class UpdateNameController extends GetxController {
       }
 
       // Update user's first & last name in the Firebase Firestore
-      Map<String, dynamic> name = {'FirstName': firstName.text.trim(), 'LastName': lastName.text.trim()};
+      Map<String, dynamic> name = {'Имя': firstName.text.trim(), 'Фамилие': lastName.text.trim()};
       await userRepository.updateSingleField(name);
 
       // Update the Rx User value
@@ -61,7 +61,7 @@ class UpdateNameController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Message
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'Your Name has been updated.');
+      TLoaders.successSnackBar(title: 'Поздравляем', message: 'Ваше имя было обновлено.');
 
       // Move to previous screen.
       Get.off(() => const ProfileScreen());

@@ -22,7 +22,7 @@ class UploadDataController extends GetxController {
       // The following line will enable the Android and iOS wakelock.
       WakelockPlus.enable();
 
-      TFullScreenLoader.openLoadingDialog('Sit Tight! Your CATEGORIES are uploading...', TImages.cloudUploadingAnimation);
+      TFullScreenLoader.openLoadingDialog('Подождите! Ваши КАТЕГОРИИ загружаются...', TImages.cloudUploadingAnimation);
 
       final controller = Get.put(CategoryRepository());
 
@@ -32,7 +32,7 @@ class UploadDataController extends GetxController {
       // Re-fetch latest Categories
       await CategoryController.instance.fetchCategories();
 
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'All Categories Uploaded Successfully.');
+      TLoaders.successSnackBar(title: 'Поздравляем', message: 'Все категории успешно загружены.');
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     } finally {
@@ -48,7 +48,7 @@ class UploadDataController extends GetxController {
       WakelockPlus.enable();
 
       TFullScreenLoader.openLoadingDialog(
-        'Sit Tight! Your PRODUCT CATEGORIES relationship is uploading...',
+        'Подождите! Загружается связь между вашими ТОВАРНЫМ И КАТЕГОРИЯМИ...',
         TImages.cloudUploadingAnimation,
       );
 
@@ -57,7 +57,7 @@ class UploadDataController extends GetxController {
       // Upload All Categories and replace the Parent IDs in Firebase Console
       await controller.uploadProductCategoryDummyData(TDummyData.productCategories);
 
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'All Categories Uploaded Successfully.');
+      TLoaders.successSnackBar(title: 'Поздравляем', message: 'Все категории успешно загружены.');
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     } finally {
@@ -72,7 +72,7 @@ class UploadDataController extends GetxController {
       // The following line will enable the Android and iOS wakelock.
       WakelockPlus.enable();
 
-      TFullScreenLoader.openLoadingDialog('Sit Tight! Your BRANDS are uploading...', TImages.cloudUploadingAnimation);
+      TFullScreenLoader.openLoadingDialog('Подождите! Ваши БРЕНДЫ загружаются...', TImages.cloudUploadingAnimation);
 
       final controller = Get.put(BrandRepository());
 
@@ -83,7 +83,7 @@ class UploadDataController extends GetxController {
       final brandController = Get.put(BrandController());
       await brandController.getFeaturedBrands();
 
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'All Brands Uploaded Successfully.');
+      TLoaders.successSnackBar(title: 'Поздравляю', message: 'Все бренды загружены.');
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     } finally {
@@ -99,7 +99,7 @@ class UploadDataController extends GetxController {
       WakelockPlus.enable();
 
       TFullScreenLoader.openLoadingDialog(
-        'Sit Tight! Your BRANDS & CATEGORIES relationship is uploading...',
+        'Пристегнитесь! Загружается информация о ваших БРЕНДАХ и КАТЕГОРИЯХ...',
         TImages.cloudUploadingAnimation,
       );
 
@@ -108,7 +108,7 @@ class UploadDataController extends GetxController {
       // Upload All Categories and replace the Parent IDs in Firebase Console
       await controller.uploadBrandCategoryDummyData(TDummyData.brandCategory);
 
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'All Brands Uploaded Successfully.');
+      TLoaders.successSnackBar(title: 'Поздравляем!', message: 'Все бренды успешно загружены.');
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     } finally {
@@ -124,7 +124,7 @@ class UploadDataController extends GetxController {
       WakelockPlus.enable();
 
       TFullScreenLoader.openLoadingDialog(
-        'Sit Tight! Your Products are uploading. It may take a while...',
+        'Подождите! Ваши товары загружаются. Это может занять некоторое время...',
         TImages.cloudUploadingAnimation,
       );
 
@@ -136,7 +136,7 @@ class UploadDataController extends GetxController {
       // Re-fetch latest Featured Products
       ProductController.instance.fetchFeaturedProducts();
 
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'All Products Uploaded Successfully.');
+      TLoaders.successSnackBar(title: 'Поздравляем!', message: 'Все товары загружены.');
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     } finally {
@@ -151,7 +151,7 @@ class UploadDataController extends GetxController {
       // The following line will enable the Android and iOS wakelock.
       WakelockPlus.enable();
 
-      TFullScreenLoader.openLoadingDialog('Sit Tight! Your Banners are uploading. It may take a while...', TImages.cloudUploadingAnimation);
+      TFullScreenLoader.openLoadingDialog('Попейте кофе! Ваши баннеры загружаются. Это может занять некоторое время...', TImages.cloudUploadingAnimation);
 
       final controller = Get.put(BannerRepository());
 
@@ -162,7 +162,7 @@ class UploadDataController extends GetxController {
       final bannerController = Get.put(BannerController());
       await bannerController.fetchBanners();
 
-      TLoaders.successSnackBar(title: 'Congratulations', message: 'All Products Uploaded Successfully.');
+      TLoaders.successSnackBar(title: 'Поздравляем!', message: 'Все товары загружены.');
     } catch (e) {
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     } finally {

@@ -52,69 +52,69 @@ class SettingsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     /// -- Account  Settings
-                    const TSectionHeading(title: 'Account Settings', showActionButton: false),
+                    const TSectionHeading(title: 'Настройка аккаунта', showActionButton: false),
                     const SizedBox(height: TSizes.spaceBtwItems),
                     TSettingsMenuTile(
                       icon: Iconsax.safe_home,
-                      title: 'My Addresses',
-                      subTitle: 'Set shopping delivery address',
+                      title: 'Мой адрес',
+                      subTitle: 'Укажите адрес доставки покупок',
                       onTap: () => Get.to(() => const UserAddressScreen()),
                     ),
                     TSettingsMenuTile(
                       icon: Iconsax.shopping_cart,
-                      title: 'My Cart',
-                      subTitle: 'Add, remove products and move to checkout',
+                      title: 'Корзина',
+                      subTitle: 'Добавляйте, удаляйте товары и переходите к оформлению заказа',
                       onTap: () => Get.to(() => const CartScreen()),
                     ),
                     TSettingsMenuTile(
                       icon: Iconsax.bag_tick,
-                      title: 'My Orders',
-                      subTitle: 'In-progress and Completed Orders',
+                      title: 'История покупок',
+                      subTitle: 'Незавершенные и завершенные заказы',
                       onTap: () => Get.to(() => const OrderScreen()),
                     ),
                     const TSettingsMenuTile(
-                        icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account'),
-                    const TSettingsMenuTile(
-                        icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
+                        icon: Iconsax.bank, title: 'Номер карты', subTitle: 'Вывести остаток средств на карту'),
+                    // const TSettingsMenuTile(
+                    //     icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
                     TSettingsMenuTile(
-                        icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message', onTap: () {}),
-                    const TSettingsMenuTile(
-                        icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts'),
+                        icon: Iconsax.notification, title: 'Уведомления', subTitle: 'Установите любой вид уведомительного сообщения', onTap: () {}),
+                    // const TSettingsMenuTile(
+                    //     icon: Iconsax.security_card, title: 'Конфиденциальность', subTitle: 'Управление использованием данных'),
 
                     /// -- App Settings
                     const SizedBox(height: TSizes.spaceBtwSections),
-                    const TSectionHeading(title: 'App Settings', showActionButton: false),
+                    const TSectionHeading(title: 'Настройки приложения', showActionButton: false),
                     const SizedBox(height: TSizes.spaceBtwItems),
                     TSettingsMenuTile(
                       icon: Iconsax.document_upload,
-                      title: 'Load Data',
-                      subTitle: 'Upload Data to your Cloud Firebase',
+                      title: 'Загрузить данные',
+                      subTitle: 'Загружайте данные в свою облачную базу данных Firebase',
                       onTap: () => Get.to(() => const UploadDataScreen()),
                     ),
                     const SizedBox(height: TSizes.spaceBtwItems),
-                    TSettingsMenuTile(
-                      icon: Iconsax.location,
-                      title: 'Geolocation',
-                      subTitle: 'Set recommendation based on location',
-                      trailing: Switch(value: true, onChanged: (value) {}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.security_user,
-                      title: 'Safe Mode',
-                      subTitle: 'Search result is safe for all ages',
-                      trailing: Switch(value: false, onChanged: (value) {}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.image,
-                      title: 'HD Image Quality',
-                      subTitle: 'Set image quality to be seen',
-                      trailing: Switch(value: false, onChanged: (value) {}),
-                    ),
+                    // TSettingsMenuTile(
+                    //   icon: Iconsax.location,
+                    //   title: 'Г',
+                    //   subTitle: 'Set recommendation based on location',
+                    //   trailing: Switch(value: true, onChanged: (value) {}),
+                    // ),
+                    // TSettingsMenuTile(
+                    //   icon: Iconsax.security_user,
+                    //   title: 'Safe Mode',
+                    //   subTitle: 'Search result is safe for all ages',
+                    //   trailing: Switch(value: false, onChanged: (value) {}),
+                    // ),
+                    // TSettingsMenuTile(
+                    //   icon: Iconsax.image,
+                    //   title: 'HD Image Quality',
+                    //   subTitle: 'Set image quality to be seen',
+                    //   trailing: Switch(value: false, onChanged: (value) {}),
+                    // ),
 
                     /// -- Logout Button
                     const SizedBox(height: TSizes.spaceBtwSections),
                     SizedBox(
-                        width: double.infinity, child: OutlinedButton(onPressed: () => controller.logout(), child: const Text('Logout'))),
+                        width: double.infinity, child: OutlinedButton(onPressed: () => controller.logout(), child: const Text('Выйти из аккаунта'))),
                     const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                   ],
                 ),
