@@ -16,7 +16,7 @@ class VariationController extends GetxController {
 
   /// -- Check Product Variation Stock Status
   void getProductVariationStockStatus() {
-    variationStockStatus.value = selectedVariation.value.stock > 0 ? 'In Stock' : 'Out of Stock';
+    variationStockStatus.value = selectedVariation.value.stock > 0 ? 'В наличии' : 'Отсутствует';
   }
 
 

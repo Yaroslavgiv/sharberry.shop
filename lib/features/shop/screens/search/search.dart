@@ -31,8 +31,8 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TAppBar(
-        title: Text('Search', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [TextButton(onPressed: () => Get.back(), child: const Text('Cancel'))],
+        title: Text('Поиск', style: Theme.of(context).textTheme.headlineMedium),
+        actions: [TextButton(onPressed: () => Get.back(), child: const Text('Закрыть'))],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -50,7 +50,7 @@ class SearchScreen extends StatelessWidget {
                       autofocus: true,
                       onChanged: (query) =>
                           searchController.searchProducts(query, sortingOption: searchController.selectedSortingOption.value),
-                      decoration: const InputDecoration(prefixIcon: Icon(Iconsax.search_normal), hintText: 'Search'),
+                      decoration: const InputDecoration(prefixIcon: Icon(Iconsax.search_normal), hintText: 'Поиск'),
                     ),
                   ),
                   const SizedBox(width: TSizes.spaceBtwItems),
@@ -95,7 +95,7 @@ class SearchScreen extends StatelessWidget {
     return Column(
       children: [
         /// Brands Heading
-        const TSectionHeading(title: 'Brands', showActionButton: false),
+        const TSectionHeading(title: 'Бренд', showActionButton: false),
 
         /// -- Brands
         Obx(
@@ -126,7 +126,7 @@ class SearchScreen extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwSections),
 
         /// Categories
-        const TSectionHeading(title: 'Categories', showActionButton: false),
+        const TSectionHeading(title: 'Категория', showActionButton: false),
         const SizedBox(height: TSizes.spaceBtwItems),
 
         /// Obx widget for reactive UI updates based on the state of [categoryController].
@@ -139,7 +139,7 @@ class SearchScreen extends StatelessWidget {
 
             // Check if there are no featured categories found
             if (categoryController.allCategories.isEmpty) {
-              return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+              return Center(child: Text('Данные отсутствуют!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
             } else {
               /// Data Found
               // Display a horizontal list of featured categories with images and text

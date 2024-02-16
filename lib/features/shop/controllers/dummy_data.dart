@@ -172,28 +172,28 @@ class TDummyData {
 
   /// -- List of all Categories
   static final List<CategoryModel> categories = [
-    CategoryModel(id: '1', image: TImages.sportIcon, name: 'Sports', isFeatured: true),
-    CategoryModel(id: '5', image: TImages.furnitureIcon, name: 'Furniture', isFeatured: true),
-    CategoryModel(id: '2', image: TImages.electronicsIcon, name: 'Electronics', isFeatured: true),
-    CategoryModel(id: '3', image: TImages.clothIcon, name: 'Clothes', isFeatured: true),
-    CategoryModel(id: '4', image: TImages.animalIcon, name: 'Animals', isFeatured: true),
-    CategoryModel(id: '6', image: TImages.shoeIcon, name: 'Shoes', isFeatured: true),
-    CategoryModel(id: '7', image: TImages.cosmeticsIcon, name: 'Cosmetics', isFeatured: true),
-    CategoryModel(id: '14', image: TImages.jeweleryIcon, name: 'Jewelery', isFeatured: true),
+    CategoryModel(id: '1', image: TImages.sportIcon, name: 'Шары с гелием', isFeatured: true),
+    CategoryModel(id: '5', image: TImages.furnitureIcon, name: 'Надпись на шарах', isFeatured: true),
+    CategoryModel(id: '2', image: TImages.electronicsIcon, name: 'Коробка сюрприз', isFeatured: true),
+    CategoryModel(id: '3', image: TImages.clothIcon, name: 'Гендерные шары', isFeatured: true),
+    CategoryModel(id: '4', image: TImages.animalIcon, name: 'Фотозоны', isFeatured: true),
+    CategoryModel(id: '6', image: TImages.shoeIcon, name: 'Шары с перьями', isFeatured: true),
+    CategoryModel(id: '7', image: TImages.cosmeticsIcon, name: 'Аэромозагка', isFeatured: true),
+    CategoryModel(id: '14', image: TImages.jeweleryIcon, name: 'Доставка', isFeatured: true),
 
     ///subcategories
-    CategoryModel(id: '8', image: TImages.sportIcon, name: 'Sport Shoes', parentId: '1', isFeatured: false),
-    CategoryModel(id: '9', image: TImages.sportIcon, name: 'Track suits', parentId: '1', isFeatured: false),
-    CategoryModel(id: '10', image: TImages.sportIcon, name: 'Sports Equipments', parentId: '1', isFeatured: false),
+    CategoryModel(id: '8', image: TImages.sportIcon, name: 'Фольгированные', parentId: '1', isFeatured: false),
+    CategoryModel(id: '9', image: TImages.sportIcon, name: 'С именами', parentId: '1', isFeatured: false),
+    CategoryModel(id: '10', image: TImages.sportIcon, name: 'Без рисунка', parentId: '1', isFeatured: false),
     //furniture
-    CategoryModel(id: '11', image: TImages.furnitureIcon, name: 'Bedroom furniture', parentId: '5', isFeatured: false),
-    CategoryModel(id: '12', image: TImages.furnitureIcon, name: 'Kitchen furniture', parentId: '5', isFeatured: false),
-    CategoryModel(id: '13', image: TImages.furnitureIcon, name: 'Office furniture', parentId: '5', isFeatured: false),
+    CategoryModel(id: '11', image: TImages.furnitureIcon, name: 'Маша и медведь', parentId: '5', isFeatured: false),
+    CategoryModel(id: '12', image: TImages.furnitureIcon, name: 'Праздники', parentId: '5', isFeatured: false),
+    CategoryModel(id: '13', image: TImages.furnitureIcon, name: 'Приколы', parentId: '5', isFeatured: false),
     //electronics
-    CategoryModel(id: '14', image: TImages.electronicsIcon, name: 'Laptop', parentId: '2', isFeatured: false),
-    CategoryModel(id: '15', image: TImages.electronicsIcon, name: 'Mobile', parentId: '2', isFeatured: false),
+    CategoryModel(id: '14', image: TImages.electronicsIcon, name: 'Цифры', parentId: '2', isFeatured: false),
+    CategoryModel(id: '15', image: TImages.electronicsIcon, name: 'Буквы', parentId: '2', isFeatured: false),
 
-    CategoryModel(id: '16', image: TImages.clothIcon, name: 'Shirts', parentId: '3', isFeatured: false),
+    CategoryModel(id: '16', image: TImages.clothIcon, name: 'Спорт', parentId: '3', isFeatured: false),
   ];
 
   /// -- List of all Brands

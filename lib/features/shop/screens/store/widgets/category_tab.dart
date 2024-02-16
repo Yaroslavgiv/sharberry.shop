@@ -45,7 +45,7 @@ class TCategoryTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TSectionHeading(
-                        title: 'You might like',
+                        title: 'Вам понравиться',
                         showActionButton: true,
                         onPressed: () => Get.to(AllProducts(
                           title: category.name,

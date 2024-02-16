@@ -14,7 +14,7 @@ class ProductReviewsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// -- Appbar
-      appBar: const TAppBar(title: Text('Reviews & Ratings'), showBackArrow: true),
+      appBar: const TAppBar(title: Text('Отзывы и рейтинги'), showBackArrow: true),
 
       /// -- Body
       body: SingleChildScrollView(
@@ -24,7 +24,7 @@ class ProductReviewsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// -- Reviews List
-              const Text("Ratings and reviews are verified and are from people who use the same type of device that you use."),
+              const Text("Оценки и отзывы проверяются и от людей, которые купили того же, что и вы."),
               const SizedBox(height: TSizes.spaceBtwItems),
 
               /// Overall Product Ratings

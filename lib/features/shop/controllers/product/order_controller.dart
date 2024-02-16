@@ -30,7 +30,7 @@ class OrderController extends GetxController {
       final userOrders = await orderRepository.fetchUserOrders();
       return userOrders;
     } catch (e) {
-      TLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
+      TLoaders.warningSnackBar(title: 'Ошибка!', message: e.toString());
       return [];
     }
   }
@@ -39,7 +39,7 @@ class OrderController extends GetxController {
   void processOrder(double totalAmount) async {
     try {
       // Start Loader
-      TFullScreenLoader.openLoadingDialog('Processing your order', TImages.pencilAnimation);
+      TFullScreenLoader.openLoadingDialog('Обработка вашего заказа', TImages.pencilAnimation);
 
       // Get user authentication Id
       final userId = AuthenticationRepository.instance.getUserID;
@@ -69,12 +69,12 @@ class OrderController extends GetxController {
       // Show Success screen
       Get.off(() => SuccessScreen(
             image: TImages.orderCompletedAnimation,
-            title: 'Payment Success!',
-            subTitle: 'Your item will be shipped soon!',
+            title: 'Успешный платеж!',
+            subTitle: 'Ваш товар будет отправлен в ближайшее время!',
             onPressed: () => Get.offAll(() => const HomeMenu()),
           ));
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
+      TLoaders.errorSnackBar(title: 'Ошибка', message: e.toString());
     }
   }
 }

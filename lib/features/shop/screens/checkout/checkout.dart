@@ -27,7 +27,7 @@ class CheckoutScreen extends StatelessWidget {
     final totalAmount = TPricingCalculator.calculateTotalPrice(subTotal, 'US');
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: const TAppBar(title: Text('Order Review'), showBackArrow: true),
+      appBar: const TAppBar(title: Text('Обзор заказа'), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -80,8 +80,8 @@ class CheckoutScreen extends StatelessWidget {
           child: ElevatedButton(
             onPressed: subTotal > 0
                 ? () => orderController.processOrder(totalAmount)
-                : () => TLoaders.warningSnackBar(title: 'Empty Cart', message: 'Add items in the cart in order to proceed.'),
-            child: Text('Checkout \$$totalAmount'),
+                : () => TLoaders.warningSnackBar(title: 'Корзина пуста', message: 'Добавьте товары в корзину, чтобы продолжить.'),
+            child: Text('Оплатить \$$totalAmount'),
           ),
         ),
       ),

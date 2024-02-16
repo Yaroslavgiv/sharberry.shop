@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/repositories/authentication/authentication_repository.dart';
-import '../../../data/repositories/user/user_repository.dart';
+// import '../../../data/repositories/user/user_repository.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/helpers/network_manager.dart';
 import '../../personalization/controllers/user_controller.dart';
@@ -54,12 +54,12 @@ class SignupController extends GetxController {
       }
 
       // Register user in the Firebase Authentication & Save user data in the Firebase
-      final userCredenshel = await AuthenticationRepository.instance.registerWithEmailAndPassword(email.text.trim(), password.text.trim());
+      await AuthenticationRepository.instance.registerWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       // Save Authenticated user data in the Firebase Firestore
       final newUser = UserModel(
-        // id: AuthenticationRepository.instance.getUserID,
-        id: userCredenshel.user!.uid,
+        id: AuthenticationRepository.instance.getUserID,
+        // id: userCredenshel.user!.uid,
         firstName: firstName.text.trim(),
         lastName: lastName.text.trim(),
         username: username.text.trim(),

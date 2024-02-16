@@ -31,7 +31,7 @@ class ProductController extends GetxController {
       // Assign Products
       featuredProducts.assignAll(products);
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      TLoaders.errorSnackBar(title: 'Ошибка!', message: e.toString());
     } finally {
       isLoading.value = false;
     }
@@ -82,6 +82,6 @@ class ProductController extends GetxController {
 
   /// -- Check Product Stock Status
   String getProductStockStatus(ProductModel product) {
-    return product.stock > 0 ? 'In Stock' : 'Out of Stock';
+    return product.stock > 0 ? 'В наличии' : 'Отсутствует';
   }
 }

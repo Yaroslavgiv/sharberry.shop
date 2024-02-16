@@ -19,11 +19,11 @@ class TCloudHelperFunctions {
     }
 
     if (!snapshot.hasData || snapshot.data == null) {
-      return const Center(child: Text('No Data Found!'));
+      return const Center(child: Text('Данные отсутствуют!'));
     }
 
     if (snapshot.hasError) {
-      return const Center(child: Text('Something went wrong.'));
+      return const Center(child: Text('Что-то пошло не так.'));
     }
 
     return null;
@@ -44,12 +44,12 @@ class TCloudHelperFunctions {
 
     if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isEmpty) {
       if (nothingFound != null) return nothingFound;
-      return const Center(child: Text('No Data Found!'));
+      return const Center(child: Text('Данные отсутствуют!'));
     }
 
     if (snapshot.hasError) {
       if (error != null) return error;
-      return const Center(child: Text('Something went wrong.'));
+      return const Center(child: Text('Что-то пошло не так.'));
     }
 
     return null;
@@ -67,7 +67,7 @@ class TCloudHelperFunctions {
     } on PlatformException catch (e) {
       throw e.message!;
     } catch (e) {
-      throw 'Something went wrong.';
+      throw 'Что-то пошло не так.';
     }
   }
 
@@ -83,7 +83,7 @@ class TCloudHelperFunctions {
     } on PlatformException catch (e) {
       throw e.message!;
     } catch (e) {
-      throw 'Something went wrong.';
+      throw 'Что-то пошло не так.';
     }
   }
 }

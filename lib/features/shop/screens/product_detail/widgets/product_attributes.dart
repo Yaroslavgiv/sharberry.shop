@@ -28,7 +28,7 @@ class TProductAttributes extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const TSectionHeading(title: 'Variation: ', showActionButton: false),
+                    const TSectionHeading(title: 'Изменить: ', showActionButton: false),
                     const SizedBox(width: TSizes.spaceBtwItems),
 
                     /// Price
@@ -38,7 +38,7 @@ class TProductAttributes extends StatelessWidget {
                         Row(
                           children: [
                             // Actual Price if sale price not null.
-                            const TProductTitleText(title: 'Price : ', smallSize: true),
+                            const TProductTitleText(title: 'Цена : ', smallSize: true),
                             if (controller.selectedVariation.value.salePrice > 0)
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +63,7 @@ class TProductAttributes extends StatelessWidget {
                         /// Stock
                         Row(
                           children: [
-                            const TProductTitleText(title: 'Stock : ', smallSize: true),
+                            const TProductTitleText(title: 'Наличие : ', smallSize: true),
                             Text(controller.variationStockStatus.value, style: Theme.of(context).textTheme.titleMedium),
                           ],
                         ),

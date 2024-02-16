@@ -93,7 +93,7 @@ class TSortableProductList extends StatelessWidget {
                     // Sort products based on the selected option
                     controller.sortProducts(value!);
                   },
-                  items: ['Name', 'Higher Price', 'Lower Price', 'Sale', 'Newest', 'Popularity'].map((option) {
+                  items: ['По имени', 'От дорогой', 'От дешёвой', 'Скидки', 'Новинки', 'Популярные'].map((option) {
                     return DropdownMenuItem<String>(
                       value: option,
                       child: Text(option),

@@ -23,10 +23,10 @@ class TOrderListItems extends StatelessWidget {
         builder: (_, snapshot) {
           /// Nothing Found Widget
           final emptyWidget = TAnimationLoaderWidget(
-            text: 'Whoops! No Orders Yet!',
+            text: 'Заказов пока нет!',
             animation: TImages.orderCompletedAnimation,
             showAction: true,
-            actionText: 'Let\'s fill it',
+            actionText: 'Давай добавим',
             onActionPressed: () => Get.off(() => const HomeMenu()),
           );
 
@@ -94,7 +94,7 @@ class TOrderListItems extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Order',
+                                      'Заказ',
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: Theme.of(context).textTheme.labelMedium,
@@ -127,7 +127,7 @@ class TOrderListItems extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Shipping Date',
+                                      'Дата доставки',
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
                                       style: Theme.of(context).textTheme.labelMedium,

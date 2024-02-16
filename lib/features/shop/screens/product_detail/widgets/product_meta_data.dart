@@ -65,7 +65,7 @@ class TProductMetaData extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
         Row(
           children: [
-            const TProductTitleText(title: 'Stock : ', smallSize: true),
+            const TProductTitleText(title: 'Наличие : ', smallSize: true),
             Text(controller.getProductStockStatus(product), style: Theme.of(context).textTheme.titleMedium),
           ],
         ),

@@ -19,8 +19,8 @@ class TBillingPaymentSection extends StatelessWidget {
     return Column(
       children: [
         TSectionHeading(
-          title: 'Payment Method',
-          buttonTitle: 'Change',
+          title: 'Способ оплаты',
+          buttonTitle: 'Изменить',
           showActionButton: true,
           onPressed: () {
             controller.selectPaymentMethod(context);

@@ -37,13 +37,13 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
+Android Studio will place build artifacts here
 /android/app/debug
 /android/app/profile
 /android/app/release
-android/
-ios/
-web/
-lib/firebase_options.dart
-img*
-README.md
+# android/
+# ios/
+# web/
+# lib/firebase_options.dart
+# img*
+# README.md

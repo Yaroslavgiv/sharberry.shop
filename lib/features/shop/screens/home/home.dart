@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Searchbar
-                  TSearchContainer(text: 'Search in Store', showBorder: false),
+                  TSearchContainer(text: 'Поиск в магазине', showBorder: false),
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Categories
@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
 
                       // Check if no featured products are found
                       if (controller.featuredProducts.isEmpty) {
-                        return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium));
+                        return Center(child: Text('Данные отсутствуют!', style: Theme.of(context).textTheme.bodyMedium));
                       } else {
                         // Featured Products Found! 🎊
                         return TGridLayout(

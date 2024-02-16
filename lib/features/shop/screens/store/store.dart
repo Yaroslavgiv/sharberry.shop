@@ -61,11 +61,11 @@ class StoreScreen extends StatelessWidget {
                       children: [
                         /// -- Search bar
                         const SizedBox(height: TSizes.spaceBtwItems),
-                        const TSearchContainer(text: 'Search in Store', showBorder: true, showBackground: false, padding: EdgeInsets.zero),
+                        const TSearchContainer(text: 'Поиск в магазине', showBorder: true, showBackground: false, padding: EdgeInsets.zero),
                         const SizedBox(height: TSizes.spaceBtwSections),
 
                         /// -- Featured Brands
-                        TSectionHeading(title: 'Featured Brands', onPressed: () => Get.to(() => const AllBrandsScreen())),
+                        TSectionHeading(title: 'Рекомендуемые бренды', onPressed: () => Get.to(() => const AllBrandsScreen())),
                         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
                         /// -- Brands
@@ -77,7 +77,7 @@ class StoreScreen extends StatelessWidget {
                             // Check if there are no featured categories found
                             if (brandController.featuredBrands.isEmpty) {
                               return Center(
-                                  child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+                                  child: Text('Данные отсутствуют!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
                             } else {
                               /// Data Found
                               return TGridLayout(

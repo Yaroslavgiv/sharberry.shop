@@ -51,12 +51,12 @@ class ProductDetailScreen extends StatelessWidget {
                   /// -- Checkout Button
                   SizedBox(
                     width: TDeviceUtils.getScreenWidth(context),
-                    child: ElevatedButton(child: const Text('Checkout'), onPressed: () => Get.to(() => const CheckoutScreen())),
+                    child: ElevatedButton(child: const Text('Оплата'), onPressed: () => Get.to(() => const CheckoutScreen())),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// - Description
-                  const TSectionHeading(title: 'Description', showActionButton: false),
+                  const TSectionHeading(title: 'Описание', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   // Read more package
                   ReadMoreText(
@@ -64,8 +64,8 @@ class ProductDetailScreen extends StatelessWidget {
                     trimLines: 2,
                     colorClickableText: Colors.pink,
                     trimMode: TrimMode.Line,
-                    trimCollapsedText: ' Show more',
-                    trimExpandedText: ' Less',
+                    trimCollapsedText: ' Показать больше',
+                    trimExpandedText: ' Меньше',
                     moreStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                     lessStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                   ),
@@ -77,7 +77,7 @@ class ProductDetailScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TSectionHeading(title: 'Reviews (199)', showActionButton: false),
+                      const TSectionHeading(title: 'Обзор (199)', showActionButton: false),
                       IconButton(
                         icon: const Icon(Iconsax.arrow_right_3, size: 18),
                         onPressed: () => Get.to(() => const ProductReviewsScreen(), fullscreenDialog: true),

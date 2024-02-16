@@ -26,7 +26,7 @@ class FavouriteScreen extends StatelessWidget {
       onPopInvoked: (value) async => Get.offAll(const HomeMenu()),
       child: Scaffold(
         appBar: TAppBar(
-          title: Text('Wishlist', style: Theme.of(context).textTheme.headlineMedium),
+          title: Text('Избранное', style: Theme.of(context).textTheme.headlineMedium),
           actions: [TCircularIcon(icon: Iconsax.add, onPressed: () => Get.to(() => const StoreScreen()))],
         ),
         body: SingleChildScrollView(
@@ -42,10 +42,10 @@ class FavouriteScreen extends StatelessWidget {
                     builder: (_, snapshot) {
                       /// Nothing Found Widget
                       final emptyWidget = TAnimationLoaderWidget(
-                        text: 'Whoops! Wishlist is Empty...',
+                        text: 'Нет добавленного избранного...',
                         animation: TImages.pencilAnimation,
                         showAction: true,
-                        actionText: 'Let\'s add some',
+                        actionText: 'Давайте добавим немного',
                         onActionPressed: () => Get.off(() => const HomeMenu()),
                       );
                       const loader = TVerticalProductShimmer(itemCount: 6);

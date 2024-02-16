@@ -50,25 +50,25 @@ class CartController extends GetxController {
   void addToCart(ProductModel product) {
     // Quantity Check
     if (productQuantityInCart.value < 1) {
-      TLoaders.customToast(message: 'Select Quantity');
+      TLoaders.customToast(message: 'Выберите количество');
       return;
     }
 
     // Variation Selected?
     if (product.productType == ProductType.variable.toString() && variationController.selectedVariation.value.id.isEmpty) {
-      TLoaders.customToast(message: 'Select Variation');
+      TLoaders.customToast(message: 'Выберите вариант');
       return;
     }
 
     // Out of Stock
     if (product.productType == ProductType.variable.toString()) {
       if (variationController.selectedVariation.value.stock < 1) {
-        TLoaders.warningSnackBar(message: 'Selected variation is out of stock.', title: 'Oh Snap!');
+        TLoaders.warningSnackBar(message: 'Выбранного варианта нет в наличии.', title: 'Ошибка!');
         return;
       }
     } else {
       if (product.stock < 1) {
-        TLoaders.warningSnackBar(message: 'Selected Product is out of stock.', title: 'Oh Snap!');
+        TLoaders.warningSnackBar(message: 'Выбранного товара нет в наличии.', title: 'Ошибка!');
         return;
       }
     }
@@ -88,7 +88,7 @@ class CartController extends GetxController {
     }
 
     updateCart();
-    TLoaders.customToast(message: 'Your Product has been added to the Cart.');
+    TLoaders.customToast(message: 'Ваш товар был добавлен в корзину.');
   }
 
   void addOneToCart(CartItemModel item) {
@@ -119,13 +119,13 @@ class CartController extends GetxController {
 
   void removeFromCartDialog(int index) {
     Get.defaultDialog(
-      title: 'Remove Product',
-      middleText: 'Are you sure you want to remove this product?',
+      title: 'Удалить продукт',
+      middleText: 'Вы уверены, что хотите удалить этот продукт?',
       onConfirm: () {
         // Remove the item from the cart
         cartItems.removeAt(index);
         updateCart();
-        TLoaders.customToast(message: 'Product removed from the Cart.');
+        TLoaders.customToast(message: 'Товар удален из корзины.');
         Get.back();
       },
       onCancel: () => () => Get.back(),

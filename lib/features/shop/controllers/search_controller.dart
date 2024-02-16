@@ -15,8 +15,8 @@ class TSearchController extends GetxController {
   RxDouble maxPrice = double.infinity.obs;
   final RxString searchQuery = ''.obs;
   final RxString selectedCategoryId = ''.obs;
-  List<String> sortingOptions = ['Name', 'Lowest Price', 'Highest Price', 'Popular', 'Newest', 'Suitable'];
-  RxString selectedSortingOption = 'Name'.obs; // Default sorting option
+  List<String> sortingOptions = ['По названию', 'От меньшей цены', 'От большей цены', 'Популярные', 'Новинки', 'Подходящие'];
+  RxString selectedSortingOption = 'По названию'.obs; // Default sorting option
 
   void search() {
     searchProducts(
@@ -39,15 +39,15 @@ class TSearchController extends GetxController {
 
       // Apply sorting
       switch (sortingOption) {
-        case 'Name':
+        case 'По названию':
         // Sort by name
           results.sort((a, b) => a.title.compareTo(b.title));
           break;
-        case 'Lowest Price':
+        case 'От меньшей цены':
         // Sort by price in ascending order
           results.sort((a, b) => a.price.compareTo(b.price));
           break;
-        case 'Highest Price':
+        case 'От большей цены':
         // Sort by price in descending order
           results.sort((a, b) => b.price.compareTo(a.price));
           break;
@@ -58,7 +58,7 @@ class TSearchController extends GetxController {
       searchResults.assignAll(results);
     } catch (e) {
       if (kDebugMode) {
-        print('Error fetching data: $e');
+        print('Ошибка при извлечении данных: $e');
       }
     } finally {
       isLoading.value = false;

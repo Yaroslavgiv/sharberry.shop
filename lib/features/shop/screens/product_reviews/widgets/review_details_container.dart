@@ -53,7 +53,7 @@ class UserReviewCard extends StatelessWidget {
           trimLines: 3,
           colorClickableText: Colors.blue,
           trimMode: TrimMode.Line,
-          trimExpandedText: '  show less',
+          trimExpandedText: '  показать меньше',
           moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue[700]),
           lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue[700]),
         ),
@@ -71,7 +71,7 @@ class UserReviewCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("T's Store", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500)),
+                    const Text("Магазин", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500)),
                     Text(TFormatter.formatDate(productReview.companyTimestamp)),
                   ],
                 ),
@@ -83,7 +83,7 @@ class UserReviewCard extends StatelessWidget {
                   trimLines: 3,
                   colorClickableText: Colors.blue,
                   trimMode: TrimMode.Line,
-                  trimExpandedText: '  show less',
+                  trimExpandedText: '  показать меньше',
                   moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue[700]),
                   lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue[700]),
                 ),

@@ -23,7 +23,7 @@ class THeaderCategories extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// -- Heading
-          const TSectionHeading(title: 'Popular Categories', textColor: TColors.white, showActionButton: false),
+          const TSectionHeading(title: 'Категории', textColor: TColors.white, showActionButton: false),
           const SizedBox(height: TSizes.spaceBtwItems),
 
           /// Obx widget for reactive UI updates based on the state of [categoryController].
@@ -36,7 +36,7 @@ class THeaderCategories extends StatelessWidget {
 
               // Check if there are no featured categories found
               if (categoryController.featuredCategories.isEmpty) {
-                return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+                return Center(child: Text('Данные не найдены!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
               } else {
 
                 /// Data Found

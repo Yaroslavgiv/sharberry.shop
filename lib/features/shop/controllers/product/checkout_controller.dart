@@ -27,7 +27,7 @@ class CheckoutController extends GetxController {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TSectionHeading(title: 'Select Payment Method'),
+              const TSectionHeading(title: 'Выберите способ оплаты'),
               const SizedBox(height: TSizes.spaceBtwSections),
               TPaymentTile(paymentMethod: PaymentMethodModel(name: 'Paypal', image: TImages.paypal)),
               const SizedBox(height: TSizes.spaceBtwItems/2),

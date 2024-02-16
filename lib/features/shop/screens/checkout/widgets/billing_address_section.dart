@@ -23,15 +23,15 @@ class TBillingAddressSection extends StatelessWidget {
         children: [
           // Display shipping address heading with a change button.
           TSectionHeading(
-            title: 'Shipping Address',
-            buttonTitle: 'Change',
+            title: 'Адрес доставки',
+            buttonTitle: 'Изменить',
             showActionButton: true,
             onPressed: () => addressController.selectNewAddressPopup(context),
           ),
           // Check if an address is selected, if true, display address details; otherwise, prompt to select an address.
           addressController.selectedAddress.value.id.isNotEmpty
               ? _buildAddressDetails(context, addressController.selectedAddress.value)
-              : Text('Select Address', style: Theme.of(context).textTheme.bodyMedium),
+              : Text('Выберите адрес', style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );

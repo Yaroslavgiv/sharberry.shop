@@ -26,7 +26,7 @@ class TPromoSlider extends StatelessWidget {
 
         // No data found
         if (controller.banners.isEmpty) {
-          return const Center(child: Text('No Data Found!'));
+          return const Center(child: Text('Данные отсутствуют!'));
         } else {
           /// Record Found! 🎊
           // Display CarouselSlider with banners and page indicator

@@ -14,7 +14,7 @@ class UploadDataScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(UploadDataController());
     return Scaffold(
-      appBar: const TAppBar(title: Text('Upload Data'), showBackArrow: true),
+      appBar: const TAppBar(title: Text('Загружать данные'), showBackArrow: true),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -24,11 +24,11 @@ class UploadDataScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TSectionHeading(title: 'Main Record', showActionButton: false),
+                  const TSectionHeading(title: 'Основная запись', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   ListTile(
                     leading: const Icon(Iconsax.category, size: 28, color: TColors.primary),
-                    title: Text('Upload Categories', style: Theme.of(context).textTheme.titleMedium),
+                    title: Text('Загрузить категории', style: Theme.of(context).textTheme.titleMedium),
                     trailing: IconButton(
                       onPressed: () => controller.uploadCategories(),
                       icon: const Icon(Iconsax.arrow_up_1, size: 28, color: TColors.primary),
@@ -37,7 +37,7 @@ class UploadDataScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems),
                   ListTile(
                     leading: const Icon(Iconsax.shop, size: 28, color: TColors.primary),
-                    title: Text('Upload Brands', style: Theme.of(context).textTheme.titleMedium),
+                    title: Text('Загрузить бренды', style: Theme.of(context).textTheme.titleMedium),
                     trailing: IconButton(
                       onPressed: () => controller.uploadBrands(),
                       icon: const Icon(Iconsax.arrow_up_1, size: 28, color: TColors.primary),
@@ -46,7 +46,7 @@ class UploadDataScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems),
                   ListTile(
                     leading: const Icon(Iconsax.shopping_cart, size: 28, color: TColors.primary),
-                    title: Text('Upload Products', style: Theme.of(context).textTheme.titleMedium),
+                    title: Text('Загрузить продукты', style: Theme.of(context).textTheme.titleMedium),
                     trailing: IconButton(
                       onPressed: () => controller.uploadProducts(),
                       icon: const Icon(Iconsax.arrow_up_1, size: 28, color: TColors.primary),
@@ -55,19 +55,19 @@ class UploadDataScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems),
                   ListTile(
                     leading: const Icon(Iconsax.image, size: 28, color: TColors.primary),
-                    title: Text('Upload Banners', style: Theme.of(context).textTheme.titleMedium),
+                    title: Text('Загрузить бренды', style: Theme.of(context).textTheme.titleMedium),
                     trailing: IconButton(
                       onPressed: () => controller.uploadBanners(),
                       icon: const Icon(Iconsax.arrow_up_1, size: 28, color: TColors.primary),
                     ),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  const TSectionHeading(title: 'Relationships', showActionButton: false),
-                  const Text('Make sure you have already uploaded all the content above.'),
+                  const TSectionHeading(title: 'Отношения', showActionButton: false),
+                  const Text('Убедитесь, что вы уже загрузили весь вышеуказанный контент.'),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   ListTile(
                     leading: const Icon(Iconsax.link, size: 28, color: TColors.primary),
-                    title: Text('Upload Brands & Categories Relation Data', style: Theme.of(context).textTheme.titleMedium),
+                    title: Text('Загружать данные о соотношении брендов и категорий', style: Theme.of(context).textTheme.titleMedium),
                     trailing: IconButton(
                       onPressed: () => controller.uploadBrandCategory(),
                       icon: const Icon(Iconsax.arrow_up_1, size: 28, color: TColors.primary),
@@ -76,7 +76,7 @@ class UploadDataScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems),
                   ListTile(
                     leading: const Icon(Iconsax.link, size: 28, color: TColors.primary),
-                    title: Text('Upload Product Categories Relational Data', style: Theme.of(context).textTheme.titleMedium),
+                    title: Text('Загружать реляционные данные о категориях продуктов', style: Theme.of(context).textTheme.titleMedium),
                     trailing: IconButton(
                       onPressed: () => controller.uploadProductCategories(),
                       icon: const Icon(Iconsax.arrow_up_1, size: 28, color: TColors.primary),

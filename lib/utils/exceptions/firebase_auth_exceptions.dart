@@ -49,12 +49,8 @@ class TFirebaseAuthException implements Exception {
         return 'Код действия отсутствует. Пожалуйста, укажите действительный код действия.';
       case 'user-token-expired':
         return 'Срок действия токена пользователя истек, и требуется аутентификация. Пожалуйста, выполните вход еще раз.';
-      case 'user-not-found':
-        return 'Не найден пользователь с указанным адресом электронной почты или UID.';
       case 'invalid-credential':
         return 'Предоставленные учетные данные неверны или срок их действия истек.';
-      case 'wrong-password':
-        return 'Пароль неверен. Пожалуйста, проверьте свой пароль и повторите попытку.';
       case 'user-token-revoked':
         return 'Токен пользователя был отозван. Пожалуйста, выполните вход еще раз.';
       case 'invalid-message-payload':
@@ -83,14 +79,10 @@ class TFirebaseAuthException implements Exception {
         return 'Предоставленная конфигурация Cordova недействительна.';
       case 'app-deleted':
         return 'Этот экземпляр приложения Firebase был удален.';
-      case 'user-disabled':
-        return 'Учетная запись пользователя была отключена.';
       case 'user-token-mismatch':
         return 'Предоставленный токен пользователя имеет несоответствие с идентификатором пользователя, прошедшего проверку подлинности.';
       case 'web-storage-unsupported':
         return 'Веб-хранилище не поддерживается или отключено.';
-      case 'invalid-credential':
-        return 'Указанные учетные данные недействительны. Пожалуйста, проверьте учетные данные и повторите попытку.';
       case 'app-not-authorized':
         return 'Приложение не авторизовано для использования аутентификации Firebase с предоставленным API-ключом.';
       case 'keychain-error':
