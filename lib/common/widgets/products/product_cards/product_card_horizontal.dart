@@ -52,7 +52,7 @@ class TProductCardHorizontal extends StatelessWidget {
                   TRoundedImage(width: 120, height: 120, imageUrl: product.thumbnail, isNetworkImage: isNetworkImage),
 
                   /// -- Sale Tag
-                  if (salePercentage != null) ProductSaleTagWidget(salePercentage: salePercentage),
+                  // if (salePercentage != null) ProductSaleTagWidget(salePercentage: salePercentage),
 
                   /// -- Favourite Icon Button
                   Positioned(
@@ -84,7 +84,7 @@ class TProductCardHorizontal extends StatelessWidget {
                           maxLines: 2,
                         ),
                         const SizedBox(height: TSizes.spaceBtwItems / 2),
-                        TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.small),
+                        // TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.small),
                       ],
                     ),
                   ),

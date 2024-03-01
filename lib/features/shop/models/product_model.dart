@@ -14,7 +14,7 @@ class ProductModel {
   double salePrice;
   String thumbnail;
   bool? isFeatured;
-  BrandModel? brand;
+  // BrandModel? brand;
   String? categoryId;
   String productType;
   String? description;
@@ -30,7 +30,7 @@ class ProductModel {
     required this.thumbnail,
     required this.productType,
     this.sku,
-    this.brand,
+    // this.brand,
     this.date,
     this.images,
     this.salePrice = 0.0,
@@ -56,7 +56,7 @@ class ProductModel {
       'SalePrice': salePrice,
       'IsFeatured': isFeatured,
       'CategoryId': categoryId,
-      'Brand': brand!.toJson(),
+      // 'Brand': brand!.toJson(),
       'Description': description,
       'ProductType': productType,
       'ProductAttributes': productAttributes != null ? productAttributes!.map((e) => e.toJson()).toList() : [],
@@ -79,7 +79,7 @@ class ProductModel {
       categoryId: data['CategoryId'] ?? '',
       description: data['Description'] ?? '',
       productType: data['ProductType'] ?? '',
-      brand: BrandModel.fromJson(data['Brand']),
+      // brand: BrandModel.fromJson(data['Brand']),
       images: data['Images'] != null ? List<String>.from(data['Images']) : [],
       productAttributes: (data['ProductAttributes'] as List<dynamic>).map((e) => ProductAttributeModel.fromJson(e)).toList(),
       productVariations: (data['ProductVariations'] as List<dynamic>).map((e) => ProductVariationModel.fromJson(e)).toList(),
@@ -101,7 +101,7 @@ class ProductModel {
       categoryId: data['CategoryId'] ?? '',
       description: data['Description'] ?? '',
       productType: data['ProductType'] ?? '',
-      brand: BrandModel.fromJson(data['Brand']),
+      // brand: BrandModel.fromJson(data['Brand']),
       images: data['Images'] != null ? List<String>.from(data['Images']) : [],
       productAttributes: (data['ProductAttributes'] as List<dynamic>).map((e) => ProductAttributeModel.fromJson(e)).toList(),
       productVariations: (data['ProductVariations'] as List<dynamic>).map((e) => ProductVariationModel.fromJson(e)).toList(),

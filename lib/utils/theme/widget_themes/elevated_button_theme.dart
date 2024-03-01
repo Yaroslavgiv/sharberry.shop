@@ -17,8 +17,8 @@ class TElevatedButtonTheme {
       disabledBackgroundColor: TColors.buttonDisabled,
       side: const BorderSide(color: TColors.primary),
       padding: const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
-      textStyle: const TextStyle(fontSize: 16, color: TColors.textWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
+      textStyle: const TextStyle(fontSize: 16, color: TColors.textWhite, fontWeight: FontWeight.w600, fontFamily: 'Poppins'),
     ),
   );
 
@@ -32,8 +32,8 @@ class TElevatedButtonTheme {
       disabledBackgroundColor: TColors.darkerGrey,
       side: const BorderSide(color: TColors.primary),
       padding: const EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
-      textStyle: const TextStyle(fontSize: 16, color: TColors.textWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
+      textStyle: const TextStyle(fontSize: 16, color: TColors.textWhite, fontWeight: FontWeight.w600, fontFamily: 'Poppins'),
     ),
   );
 }

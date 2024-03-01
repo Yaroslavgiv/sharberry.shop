@@ -51,10 +51,10 @@ class AddNewAddressScreen extends StatelessWidget {
                     Expanded(
                       child: TextFormField(
                         controller: controller.postalCode,
-                        validator: (value) => TValidator.validateEmptyText('Индекс', value),
+                        validator: (value) => TValidator.validateEmptyText('Номер дома и квартиры', value),
                         expands: false,
                         decoration: const InputDecoration(
-                          labelText: 'Идекс',
+                          labelText: 'Номер дома и квартиры',
                           prefixIcon: Icon(Iconsax.code),
                         ),
                       ),
@@ -76,25 +76,25 @@ class AddNewAddressScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: TSizes.spaceBtwInputFields),
-                    Expanded(
-                      child: TextFormField(
-                        controller: controller.state,
-                        validator: (value) => TValidator.validateEmptyText('Область', value),
-                        expands: false,
-                        decoration: const InputDecoration(
-                          labelText: 'Область',
-                          prefixIcon: Icon(Iconsax.activity),
-                        ),
-                      ),
-                    ),
+                    // Expanded(
+                    //   child: TextFormField(
+                    //     controller: controller.state,
+                    //     validator: (value) => TValidator.validateEmptyText('Область', value),
+                    //     expands: false,
+                    //     decoration: const InputDecoration(
+                    //       labelText: 'Область',
+                    //       prefixIcon: Icon(Iconsax.activity),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
-                const SizedBox(height: TSizes.spaceBtwInputFields),
-                TextFormField(
-                  controller: controller.country,
-                  validator: (value) => TValidator.validateEmptyText('Строна', value),
-                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'Строна'),
-                ),
+                // const SizedBox(height: TSizes.spaceBtwInputFields),
+                // TextFormField(
+                //   controller: controller.country,
+                //   validator: (value) => TValidator.validateEmptyText('Строна', value),
+                //   decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'Строна'),
+                // ),
                 const SizedBox(height: TSizes.defaultSpace),
                 SizedBox(
                   width: double.infinity,

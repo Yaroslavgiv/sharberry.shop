@@ -14,14 +14,14 @@ class TImages {
 
   // -- Category Icons
   static const String sportIcon = "assets/icons/categories/shar.png";
-  static const String clothIcon = "assets/icons/categories/icons8-tailors-dummy-64.png";
-  static const String shoeIcon = "assets/icons/categories/icons8-shoes-64.png";
-  static const String cosmeticsIcon = "assets/icons/categories/icons8-cosmetics-64.png";
-  static const String animalIcon = "assets/icons/categories/icons8-dog-heart-64.png";
-  static const String toyIcon = "assets/icons/categories/icons8-wooden-toy-car-50.png";
-  static const String furnitureIcon = "assets/icons/categories/icons8-dining-chair-64.png";
-  static const String jeweleryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
-  static const String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
+  static const String clothIcon = "assets/icons/categories/gender.png";
+  static const String shoeIcon = "assets/icons/categories/pero.png";
+  static const String cosmeticsIcon = "assets/icons/categories/aeromozaika.png";
+  static const String animalIcon = "assets/icons/categories/fotozona.png";
+  // static const String toyIcon = "assets/icons/categories/icons8-wooden-toy-car-50.png";
+  static const String furnitureIcon = "assets/icons/categories/nadpisi.png";
+  static const String jeweleryIcon = "assets/icons/categories/dostavka.png";
+  static const String electronicsIcon = "assets/icons/categories/korob_surprays.png";
 
   // -- Brand Icons
   static const String nikeLogo = "assets/icons/brands/nike.png";
@@ -155,6 +155,7 @@ class TImages {
   static const String userProfileImage3 = "assets/images/reviews/review_profile_image_3.jpeg";
 
   //Banners
+    //Banners
   static const String promoBanner1 = "assets/images/products/promo-banner-1.png";
   static const String promoBanner2 = "assets/images/products/promo-banner-2.png";
   static const String promoBanner3 = "assets/images/products/promo-banner-3.png";

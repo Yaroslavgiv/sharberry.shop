@@ -27,7 +27,9 @@ class FavouriteScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TAppBar(
           title: Text('Избранное', style: Theme.of(context).textTheme.headlineMedium),
-          actions: [TCircularIcon(icon: Iconsax.add, onPressed: () => Get.to(() => const StoreScreen()))],
+          actions: [TCircularIcon(icon: Iconsax.add, onPressed: () => 
+          Get.to(() => const StoreScreen()))
+          ],
         ),
         body: SingleChildScrollView(
           child: Padding(

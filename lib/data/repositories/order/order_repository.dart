@@ -16,12 +16,12 @@ class OrderRepository extends GetxController {
   Future<List<OrderModel>> fetchUserOrders() async {
     try {
       final userId = AuthenticationRepository.instance.getUserID;
-      if (userId.isEmpty) throw 'Unable to find user information. Try again in few minutes.';
+      if (userId.isEmpty) throw 'Не удается найти информацию о пользователе. Повторите попытку через несколько минут.';
 
       final result = await _db.collection('Users').doc(userId).collection('Orders').get();
       return result.docs.map((documentSnapshot) => OrderModel.fromSnapshot(documentSnapshot)).toList();
     } catch (e) {
-      throw 'Something went wrong while fetching Order Information. Try again later';
+      throw 'Что-то пошло не так при получении информации о заказе. Попробуйте еще раз позже';
     }
   }
 
@@ -30,7 +30,7 @@ class OrderRepository extends GetxController {
     try {
       await _db.collection('Users').doc(userId).collection('Orders').add(order.toJson());
     } catch (e) {
-      throw 'Something went wrong while saving Order Information. Try again later';
+      throw 'Что-то пошло не так при получении информации о заказе. Попробуйте еще раз позже';
     }
   }
 }

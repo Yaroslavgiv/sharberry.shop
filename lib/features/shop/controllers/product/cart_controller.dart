@@ -42,14 +42,14 @@ class CartController extends GetxController {
       quantity: quantity,
       variationId: variation.id,
       image: isVariation ? variation.image : product.thumbnail,
-      brandName: product.brand != null ? product.brand!.name : '',
+      // brandName: product.brand != null ? product.brand!.name : '',
       selectedVariation: isVariation ? variation.attributeValues : null,
     );
   }
 
   void addToCart(ProductModel product) {
     // Quantity Check
-    if (productQuantityInCart.value < 1) {
+     if (productQuantityInCart.value < 1) {
       TLoaders.customToast(message: 'Выберите количество');
       return;
     }

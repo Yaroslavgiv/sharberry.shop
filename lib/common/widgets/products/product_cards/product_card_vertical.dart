@@ -19,7 +19,8 @@ import 'widgets/product_card_pricing_widget.dart';
 import 'widgets/product_sale_tag.dart';
 
 class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key, required this.product, this.isNetworkImage = true});
+  const TProductCardVertical(
+      {super.key, required this.product, this.isNetworkImage = true});
 
   final ProductModel product;
   final bool isNetworkImage;
@@ -27,7 +28,7 @@ class TProductCardVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productController = ProductController.instance;
-    final salePercentage = productController.calculateSalePercentage(product.price, product.salePrice);
+    // final salePercentage = productController.calculateSalePercentage(product.price, product.salePrice);
     final dark = THelperFunctions.isDarkMode(context);
 
     return GestureDetector(
@@ -54,10 +55,15 @@ class TProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   /// -- Thumbnail Image
-                  Center(child: TRoundedImage(imageUrl: product.thumbnail, applyImageRadius: true, isNetworkImage: isNetworkImage)),
+                  Center(
+                      child: TRoundedImage(
+                    imageUrl: product.thumbnail,
+                    applyImageRadius: true,
+                    isNetworkImage: isNetworkImage,
+                  )),
 
                   /// -- Sale Tag
-                  if (salePercentage != null) ProductSaleTagWidget(salePercentage: salePercentage),
+                  // if (salePercentage != null) ProductSaleTagWidget(salePercentage: salePercentage),
 
                   /// -- Favourite Icon Button
                   Positioned(
@@ -78,7 +84,7 @@ class TProductCardVertical extends StatelessWidget {
                 children: [
                   TProductTitleText(title: product.title, smallSize: true),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
-                  TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.small),
+                  // TBrandTitleWithVerifiedIcon(title: product.brand!.name, brandTextSize: TextSizes.small),
                 ],
               ),
             ),

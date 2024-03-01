@@ -4,6 +4,7 @@ import '../../../utils/constants/colors.dart';
 import '../../../utils/device/device_utility.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
+/// A custom tab bar widget with customizable appearance.
 class TTabBar extends StatelessWidget implements PreferredSizeWidget {
   /// Default constructor for the TTabBar.
   ///

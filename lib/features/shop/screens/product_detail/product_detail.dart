@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
+// import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../common/widgets/products/cart/bottom_add_to_cart_widget.dart';
@@ -9,8 +9,8 @@ import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
 import '../../models/product_model.dart';
 import '../checkout/checkout.dart';
-import '../product_reviews/product_reviews.dart';
-import 'widgets/product_attributes.dart';
+// import '../product_reviews/product_reviews.dart';
+// import 'widgets/product_attributes.dart';
 import 'widgets/product_detail_image_slider.dart';
 import 'widgets/product_meta_data.dart';
 import 'widgets/rating_share_widget.dart';
@@ -45,8 +45,8 @@ class ProductDetailScreen extends StatelessWidget {
 
                   /// -- Attributes
                   // If Product has no variations do not show attributes as well.
-                  if (product.productVariations != null && product.productVariations!.isNotEmpty) TProductAttributes(product: product),
-                  if (product.productVariations != null && product.productVariations!.isNotEmpty) const SizedBox(height: TSizes.spaceBtwSections),
+                  // if (product.productVariations != null && product.productVariations!.isNotEmpty) TProductAttributes(product: product),
+                  // if (product.productVariations != null && product.productVariations!.isNotEmpty) const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// -- Checkout Button
                   SizedBox(
@@ -72,18 +72,18 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// - Reviews
-                  const Divider(),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const TSectionHeading(title: 'Обзор (199)', showActionButton: false),
-                      IconButton(
-                        icon: const Icon(Iconsax.arrow_right_3, size: 18),
-                        onPressed: () => Get.to(() => const ProductReviewsScreen(), fullscreenDialog: true),
-                      )
-                    ],
-                  ),
+                  // const Divider(),
+                  // const SizedBox(height: TSizes.spaceBtwItems),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     const TSectionHeading(title: 'Reviews (199)', showActionButton: false),
+                  //     IconButton(
+                  //       icon: const Icon(Iconsax.arrow_right_3, size: 18),
+                  //       onPressed: () => Get.to(() => const ProductReviewsScreen(), fullscreenDialog: true),
+                  //     )
+                  //   ],
+                  // ),
                 ],
               ),
             ),

@@ -35,7 +35,7 @@ class CategoryController extends GetxController {
       featuredCategories.assignAll(allCategories.where((category) => (category.isFeatured) && category.parentId.isEmpty).take(8).toList());
 
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Ошибка!', message: e.toString());
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
     }
@@ -49,7 +49,7 @@ class CategoryController extends GetxController {
       final subCategories = await _categoryRepository.getSubCategories(categoryId);
       return subCategories;
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Ошибка!', message: e.toString());
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
       return [];
     }
   }

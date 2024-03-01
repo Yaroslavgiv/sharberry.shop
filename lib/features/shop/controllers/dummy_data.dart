@@ -114,7 +114,7 @@ class TDummyData {
         quantity: 1,
         title: products[0].title,
         image: products[0].thumbnail,
-        brandName: products[0].brand!.name,
+        // brandName: products[0].brand!.name,
         price: products[0].productVariations![0].price,
         selectedVariation: products[0].productVariations![0].attributeValues,
       ),
@@ -124,7 +124,7 @@ class TDummyData {
         quantity: 1,
         title: products[1].title,
         image: products[1].thumbnail,
-        brandName: products[1].brand!.name,
+        // brandName: products[1].brand!.name,
         price: products[1].price,
         selectedVariation: products[1].productVariations != null ? products[1].productVariations![1].attributeValues : {},
       ),
@@ -172,12 +172,12 @@ class TDummyData {
 
   /// -- List of all Categories
   static final List<CategoryModel> categories = [
-    CategoryModel(id: '1', image: TImages.sportIcon, name: 'Шары с гелием', isFeatured: true),
+    CategoryModel(id: '1', image: TImages.sportIcon, name: 'С гелием', isFeatured: true),
     CategoryModel(id: '5', image: TImages.furnitureIcon, name: 'Надпись на шарах', isFeatured: true),
     CategoryModel(id: '2', image: TImages.electronicsIcon, name: 'Коробка сюрприз', isFeatured: true),
     CategoryModel(id: '3', image: TImages.clothIcon, name: 'Гендерные шары', isFeatured: true),
     CategoryModel(id: '4', image: TImages.animalIcon, name: 'Фотозоны', isFeatured: true),
-    CategoryModel(id: '6', image: TImages.shoeIcon, name: 'Шары с перьями', isFeatured: true),
+    CategoryModel(id: '6', image: TImages.shoeIcon, name: 'С перьями шары', isFeatured: true),
     CategoryModel(id: '7', image: TImages.cosmeticsIcon, name: 'Аэромозагка', isFeatured: true),
     CategoryModel(id: '14', image: TImages.jeweleryIcon, name: 'Доставка', isFeatured: true),
 
@@ -343,7 +343,7 @@ class TDummyData {
       isFeatured: true,
       thumbnail: TImages.productImage1,
       description: 'Green Nike sports shoe',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike', productsCount: 265, isFeatured: true),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike', productsCount: 265, isFeatured: true),
       images: [TImages.productImage1, TImages.productImage23, TImages.productImage21, TImages.productImage9],
       salePrice: 30,
       sku: 'ABR4568',
@@ -383,7 +383,7 @@ class TDummyData {
       thumbnail: TImages.productImage69,
       description:
       'This is a Product description for Blue Nike Sleeve less vest. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA'),
+      // brand: BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA'),
       images: [TImages.productImage68, TImages.productImage69, TImages.productImage5],
       salePrice: 30,
       sku: 'ABR4568',
@@ -403,7 +403,7 @@ class TDummyData {
       thumbnail: TImages.productImage64,
       description:
       'This is a Product description for Leather brown Jacket. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA'),
+      // brand: BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA'),
       images: [TImages.productImage64, TImages.productImage65, TImages.productImage66, TImages.productImage67],
       salePrice: 30,
       sku: 'ABR4568',
@@ -423,7 +423,7 @@ class TDummyData {
       thumbnail: TImages.productImage60,
       description:
       'This is a Product description for 4 Color collar t-shirt dry fit. There are more things that can be added but its just a demo and nothing else.',
-      brand: BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA'),
+      // brand: BrandModel(id: '6', image: TImages.zaraLogo, name: 'ZARA'),
       images: [TImages.productImage60, TImages.productImage61, TImages.productImage62, TImages.productImage63],
       salePrice: 30,
       sku: 'ABR4568',
@@ -472,7 +472,7 @@ class TDummyData {
       isFeatured: false,
       thumbnail: TImages.productImage10,
       description: 'Nike Air Jordon Shoes for running. Quality product, Long Lasting',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike', productsCount: 265, isFeatured: true),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike', productsCount: 265, isFeatured: true),
       images: [TImages.productImage7, TImages.productImage8, TImages.productImage9, TImages.productImage10],
       salePrice: 30,
       sku: 'ABR4568',
@@ -512,7 +512,7 @@ class TDummyData {
       isFeatured: false,
       thumbnail: TImages.productImage11,
       description: 'SAMSUNG Galaxy S9 (Pink, 64 GB)  (4 GB RAM), Long Battery timing',
-      brand: BrandModel(id: '7', image: TImages.appleLogo, name: 'Samsung'),
+      // brand: BrandModel(id: '7', image: TImages.appleLogo, name: 'Samsung'),
       images: [TImages.productImage11, TImages.productImage12, TImages.productImage13, TImages.productImage12],
       salePrice: 650,
       sku: 'ABR4568',
@@ -532,7 +532,7 @@ class TDummyData {
       thumbnail: TImages.productImage18,
       description:
       'This is a Product description for TOMI Dog food. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '7', image: TImages.appleLogo, name: 'Tomi'),
+      // brand: BrandModel(id: '7', image: TImages.appleLogo, name: 'Tomi'),
       salePrice: 10,
       sku: 'ABR4568',
       categoryId: '4',
@@ -552,7 +552,7 @@ class TDummyData {
       thumbnail: TImages.productImage19,
       description:
       'This is a Product description for Nike Air Jordon. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage19, TImages.productImage20, TImages.productImage21, TImages.productImage22],
       salePrice: 200,
       sku: 'ABR4568',
@@ -571,7 +571,7 @@ class TDummyData {
       thumbnail: TImages.productImage20,
       description:
       'This is a Product description for Nike Air Jordon. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage20, TImages.productImage23, TImages.productImage21, TImages.productImage22],
       // salePrice: 200,
       sku: 'ABR4568',
@@ -591,7 +591,7 @@ class TDummyData {
       thumbnail: TImages.productImage21,
       description:
       'This is a Product description for Nike Air Max. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage21, TImages.productImage20, TImages.productImage19, TImages.productImage22],
       salePrice: 400,
       sku: 'ABR4568',
@@ -611,7 +611,7 @@ class TDummyData {
       thumbnail: TImages.productImage22,
       description:
       'This is a Product description for Nike Basketball shoes. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage22, TImages.productImage20, TImages.productImage21, TImages.productImage23],
       salePrice: 400,
       sku: 'ABR4568',
@@ -631,7 +631,7 @@ class TDummyData {
       thumbnail: TImages.productImage23,
       description:
       'This is a Product description for Nike wild horse shoes. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage23, TImages.productImage20, TImages.productImage21, TImages.productImage22],
       salePrice: 400,
       sku: 'ABR4568',
@@ -652,7 +652,7 @@ class TDummyData {
       thumbnail: TImages.productImage26,
       description:
       'This is a Product description for Nike Track suit red. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage26, TImages.productImage24, TImages.productImage25, TImages.productImage27],
       // salePrice: 400,
       sku: 'ABR4568',
@@ -671,7 +671,7 @@ class TDummyData {
       thumbnail: TImages.productImage24,
       description:
       'This is a Product description for Nike Track suit Black. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage24, TImages.productImage26, TImages.productImage25, TImages.productImage27],
       // salePrice: 400,
       sku: 'ABR4568',
@@ -690,7 +690,7 @@ class TDummyData {
       thumbnail: TImages.productImage25,
       description:
       'This is a Product description for Nike Track suit Blue. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage25, TImages.productImage24, TImages.productImage26, TImages.productImage27],
       // salePrice: 400,
       sku: 'ABR4568',
@@ -709,7 +709,7 @@ class TDummyData {
       thumbnail: TImages.productImage27,
       description:
       'This is a Product description for Nike Track suit Parrot Green. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
+      // brand: BrandModel(id: '1', image: TImages.nikeLogo, name: 'Nike'),
       images: [TImages.productImage27, TImages.productImage24, TImages.productImage25, TImages.productImage26],
       // salePrice: 400,
       sku: 'ABR4568',
@@ -730,7 +730,7 @@ class TDummyData {
       thumbnail: TImages.productImage28,
       description:
       'This is a Product description for Football. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
+      // brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
       images: [TImages.productImage28, TImages.productImage29, TImages.productImage30, TImages.productImage31],
       // salePrice: 400,
       sku: 'ABR4568',
@@ -749,7 +749,7 @@ class TDummyData {
       thumbnail: TImages.productImage29,
       description:
       'This is a Product description for Baseball Bat. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
+      // brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
       images: [TImages.productImage29, TImages.productImage28, TImages.productImage30, TImages.productImage31],
       // salePrice: 400,
       sku: 'ABR4568',
@@ -768,7 +768,7 @@ class TDummyData {
       thumbnail: TImages.productImage30,
       description:
       'This is a Product description for Cricket Bat. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
+      // brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
       images: [TImages.productImage30, TImages.productImage29, TImages.productImage28, TImages.productImage31],
       // salePrice: 400,
       sku: 'ABR4568',
@@ -787,7 +787,7 @@ class TDummyData {
       thumbnail: TImages.productImage31,
       description:
       'This is a Product description for Tennis Racket. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
+      // brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
       images: [TImages.productImage31, TImages.productImage29, TImages.productImage30, TImages.productImage28],
       // salePrice: 400,1
       sku: 'ABR4568',
@@ -810,7 +810,7 @@ class TDummyData {
       thumbnail: TImages.productImage32,
       description:
       'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.',
-      brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
+      // brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
       images: [TImages.productImage43, TImages.productImage44, TImages.productImage45, TImages.productImage46],
       salePrice: 600,
       sku: 'ABR4568',
@@ -850,7 +850,7 @@ class TDummyData {
       thumbnail: TImages.productImage33,
       description:
       'This is a Product description for Side Table Lamp. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
+      // brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '11',
@@ -868,7 +868,7 @@ class TDummyData {
       thumbnail: TImages.productImage34,
       description:
       'This is a Product description for Bedroom Sofa. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
+      // brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '11',
@@ -886,7 +886,7 @@ class TDummyData {
       thumbnail: TImages.productImage35,
       description:
       'This is a Product description for Bedroom Wardrobe. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
+      // brand: BrandModel(id: '8', image: TImages.kenwoodLogo, name: 'Kenwood'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '11',
@@ -905,7 +905,7 @@ class TDummyData {
       thumbnail: TImages.productImage36,
       description:
       'This is a Product description for Kitchen Counter. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
+      // brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '12',
@@ -923,7 +923,7 @@ class TDummyData {
       thumbnail: TImages.productImage37,
       description:
       'This is a Product description for Dinning Table. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
+      // brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '12',
@@ -941,7 +941,7 @@ class TDummyData {
       thumbnail: TImages.productImage38,
       description:
       'This is a Product description for Refrigerator. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
+      // brand: BrandModel(id: '2', image: TImages.adidasLogo, name: 'Adidas'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '12',
@@ -960,7 +960,7 @@ class TDummyData {
       thumbnail: TImages.productImage39,
       description:
       'This is a Product description for Office Chair. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
+      // brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '13',
@@ -978,7 +978,7 @@ class TDummyData {
       thumbnail: TImages.productImage40,
       description:
       'This is a Product description for Office Chair. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
+      // brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '13',
@@ -996,7 +996,7 @@ class TDummyData {
       thumbnail: TImages.productImage41,
       description:
       'This is a Product description for Office Desk. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
+      // brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '13',
@@ -1014,7 +1014,7 @@ class TDummyData {
       thumbnail: TImages.productImage42,
       description:
       'This is a Product description for Office Desk. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
+      // brand: BrandModel(id: '9', image: TImages.ikeaLogo, name: 'IKEA'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '13',
@@ -1036,7 +1036,7 @@ class TDummyData {
       thumbnail: TImages.productImage56,
       description:
       'This is a Product description for Acer Laptop. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
+      // brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
       images: [TImages.productImage56, TImages.productImage47, TImages.productImage57, TImages.productImage58],
       salePrice: 800,
       sku: 'ABR4568',
@@ -1076,7 +1076,7 @@ class TDummyData {
       thumbnail: TImages.productImage48,
       description:
       'This is a Product description for Acer Laptop. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
+      // brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '14',
@@ -1094,7 +1094,7 @@ class TDummyData {
       thumbnail: TImages.productImage49,
       description:
       'This is a Product description for Acer Laptop. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
+      // brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '14',
@@ -1112,7 +1112,7 @@ class TDummyData {
       thumbnail: TImages.productImage50,
       description:
       'This is a Product description for Acer Laptop. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
+      // brand: BrandModel(id: '10', image: TImages.acerlogo, name: 'Acer'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '14',
@@ -1131,7 +1131,7 @@ class TDummyData {
       thumbnail: TImages.productImage51,
       description:
       'This is a Product description for Iphone. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
+      // brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '15',
@@ -1149,7 +1149,7 @@ class TDummyData {
       thumbnail: TImages.productImage52,
       description:
       'This is a Product description for Iphone. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
+      // brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '15',
@@ -1167,7 +1167,7 @@ class TDummyData {
       thumbnail: TImages.productImage53,
       description:
       'This is a Product description for Iphone. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
+      // brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
       // salePrice: 400,1
       sku: 'ABR4568',
       categoryId: '15',
@@ -1186,7 +1186,7 @@ class TDummyData {
       thumbnail: TImages.productImage70,
       description:
       'This is a Product description for Iphone 12. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
+      // brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'Apple'),
       images: [TImages.productImage70, TImages.productImage71, TImages.productImage72, TImages.productImage73],
       salePrice: 800,
       sku: 'ABR4568',
@@ -1259,7 +1259,7 @@ class TDummyData {
       thumbnail: TImages.productImage14,
       description:
       'This is a Product description for iphone 8. There are more things that can be added but i am just practicing and nothing else.',
-      brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'iphone 8'),
+      // brand: BrandModel(id: '5', image: TImages.appleLogo, name: 'iphone 8'),
       images: [TImages.productImage15, TImages.productImage16, TImages.productImage17, TImages.productImage14],
       salePrice: 380,
       sku: 'ABR4568',

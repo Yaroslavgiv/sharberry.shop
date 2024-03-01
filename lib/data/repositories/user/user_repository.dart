@@ -18,7 +18,7 @@ class UserRepository extends GetxController {
   final _firebaseStorage = FirebaseStorage.instance;
 
 
-  /// Function to save user data to Firestore. Сохранение
+  /// Function to save user data to Firestore.
   Future<void> saveUserRecord(UserModel user) async {
     try {
       await _db.collection("Users").doc(user.id).set(user.toJson());
@@ -33,7 +33,7 @@ class UserRepository extends GetxController {
     }
   }
 
-  /// Function to fetch user details based on user ID. Извлечение
+  /// Function to fetch user details based on user ID.
   Future<UserModel> fetchUserDetails() async {
     try {
       final documentSnapshot = await _db.collection("Users").doc(AuthenticationRepository.instance.getUserID).get();
@@ -53,7 +53,7 @@ class UserRepository extends GetxController {
     }
   }
 
-  /// Function to update user data in Firestore. Обновление данных
+  /// Function to update user data in Firestore.
   Future<void> updateUserDetails(UserModel updatedUser) async {
     try {
       await _db.collection("Users").doc(updatedUser.id).update(updatedUser.toJson());
@@ -68,7 +68,7 @@ class UserRepository extends GetxController {
     }
   }
 
-  /// Update any field in specific Users Collection    Обновить поле
+  /// Update any field in specific Users Collection
   Future<void> updateSingleField(Map<String, dynamic> json) async {
     try {
       await _db.collection("Users").doc(AuthenticationRepository.instance.getUserID).update(json);
@@ -83,7 +83,7 @@ class UserRepository extends GetxController {
     }
   }
 
-  /// Upload any Image вабор картинки
+  /// Upload any Image
   Future<String> uploadImage(String path, XFile image) async {
     try {
       final ref = _firebaseStorage.ref(path).child(image.name);
@@ -100,8 +100,8 @@ class UserRepository extends GetxController {
       throw 'Что-то пошло не так. Пожалуйста, попробуйте снова';
     }
   }
- 
-  /// Function to remove user data from Firestore. Удаление
+
+  /// Function to remove user data from Firestore.
   Future<void> removeUserRecord(String userId) async {
     try {
       await _db.collection("Users").doc(userId).delete();

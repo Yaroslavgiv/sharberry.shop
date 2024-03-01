@@ -20,7 +20,9 @@ class TPrimaryHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return TCurvedEdgesWidget(
       child: Container(
-        color: TColors.primary,
+        decoration: const BoxDecoration(
+          gradient: TColors.linerGradient
+        ),
         padding: const EdgeInsets.only(bottom: 0),
 
         /// -- If [size.isFinite': is not true.in Stack] error occurred -> Read README.md file at [DESIGN ERRORS] # 1

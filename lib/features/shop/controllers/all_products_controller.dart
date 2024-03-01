@@ -25,26 +25,26 @@ class AllProductsController extends GetxController {
   void assignProducts(List<ProductModel> products) {
     // Assign products to the 'products' list
     this.products.assignAll(products);
-    sortProducts('Название');
+    sortProducts('Name');
   }
 
   void sortProducts(String sortOption) {
     selectedSortOption.value = sortOption;
 
     switch (sortOption) {
-      case 'Название':
+      case 'Name':
         products.sort((a, b) => a.title.compareTo(b.title));
         break;
-      case 'Более высокая цена':
+      case 'Higher Price':
         products.sort((a, b) => b.price.compareTo(a.price));
         break;
-      case 'Более низкая цена':
+      case 'Lower Price':
         products.sort((a, b) => a.price.compareTo(b.price));
         break;
-      case 'Новейший':
+      case 'Newest':
         products.sort((a, b) => a.date!.compareTo(b.date!));
         break;
-      case 'Скидки':
+      case 'Sale':
         products.sort((a, b) {
           if (b.salePrice > 0) {
             return b.salePrice.compareTo(a.salePrice);

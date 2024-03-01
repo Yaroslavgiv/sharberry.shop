@@ -20,7 +20,7 @@ class UserAddressScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text('Адреса', style: Theme.of(context).textTheme.headlineSmall),
+        title: Text('Адрес', style: Theme.of(context).textTheme.headlineSmall),
       ),
       body: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),

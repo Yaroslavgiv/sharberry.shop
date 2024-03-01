@@ -26,10 +26,8 @@ class TLoginForm extends StatelessWidget {
             /// Email
             TextFormField(
               controller: controller.email,
-              validator: (value) => TValidator.validateEmail(value),
-              decoration: const InputDecoration(
-                  prefixIcon: Icon(Iconsax.direct_right),
-                  labelText: TTexts.email),
+              validator: TValidator.validateEmail,
+              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: TTexts.email),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -38,15 +36,13 @@ class TLoginForm extends StatelessWidget {
               () => TextFormField(
                 obscureText: controller.hidePassword.value,
                 controller: controller.password,
-                validator: (value) =>
-                    TValidator.validateEmptyText('Пароль', value),
+                validator: (value) => TValidator.validateEmptyText('Пароль', value),
                 decoration: InputDecoration(
                   labelText: TTexts.password,
                   prefixIcon: const Icon(Iconsax.password_check),
                   suffixIcon: IconButton(
-                    onPressed: () => controller.hidePassword.value =
-                        !controller.hidePassword.value,
-                    icon: Icon(controller.hidePassword.value ? Iconsax.eye : Iconsax.eye_slash),
+                    onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                    icon: const Icon(Iconsax.eye_slash),
                   ),
                 ),
               ),
@@ -61,21 +57,13 @@ class TLoginForm extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Obx(
-                      () => Checkbox(
-                          value: controller.rememberMe.value,
-                          onChanged: (value) =>
-                              controller.rememberMe.value = !controller.rememberMe.value),
-                    ),
+                    Obx(() => Checkbox(value: controller.rememberMe.value, onChanged: (value) => controller.rememberMe.value = value!)),
                     const Text(TTexts.rememberMe),
                   ],
                 ),
 
                 /// Forget Password
-                TextButton(
-                  onPressed: () => Get.to(() => const ForgetPasswordScreen()),
-                  child: const Text(TTexts.forgetPassword),
-                ),
+                TextButton(onPressed: () => Get.to(() => const ForgetPasswordScreen()), child: const Text(TTexts.forgetPassword)),
               ],
             ),
             const SizedBox(height: TSizes.spaceBtwSections),
@@ -83,18 +71,14 @@ class TLoginForm extends StatelessWidget {
             /// Sign In Button
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () => controller.emailAndPasswordSignIn(),
-                  child: const Text(TTexts.signIn)),
+              child: ElevatedButton(onPressed: () => controller.emailAndPasswordSignIn(), child: const Text(TTexts.signIn)),
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
 
             /// Create Account Button
             SizedBox(
               width: double.infinity,
-              child: OutlinedButton(
-                  onPressed: () => Get.to(() => const SignupScreen()),
-                  child: const Text(TTexts.createAccount)),
+              child: OutlinedButton(onPressed: () => Get.to(() => const SignupScreen()), child: const Text(TTexts.createAccount)),
             ),
           ],
         ),

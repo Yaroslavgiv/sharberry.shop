@@ -16,13 +16,13 @@ class AddressRepository extends GetxController {
   Future<List<AddressModel>> fetchUserAddresses() async {
     try {
       final userId = AuthenticationRepository.instance.firebaseUser!.uid;
-      if (userId.isEmpty) throw 'Unable to find user information. Try again in few minutes.';
+      if (userId.isEmpty) throw 'Не удается найти информацию о пользователе. Повторите попытку через несколько минут.';
 
       final result = await _db.collection('Users').doc(userId).collection('Addresses').get();
       return result.docs.map((documentSnapshot) => AddressModel.fromDocumentSnapshot(documentSnapshot)).toList();
     } catch (e) {
       // log e.toString();
-      throw 'Something went wrong while fetching Address Information. Try again later';
+      throw 'Что-то пошло не так при получении адресной информации. Попробуйте еще раз позже';
     }
   }
 
@@ -32,7 +32,7 @@ class AddressRepository extends GetxController {
       final currentAddress = await _db.collection('Users').doc(userId).collection('Addresses').add(address.toJson());
       return currentAddress.id;
     } catch (e) {
-      throw 'Something went wrong while saving Address Information. Try again later';
+      throw 'Что-то пошло не так при получении адресной информации. Попробуйте еще раз позже';
     }
   }
 
@@ -41,7 +41,7 @@ class AddressRepository extends GetxController {
     try {
       await _db.collection('Users').doc(userId).collection('Addresses').doc(addressId).update({'SelectedAddress': selected});
     } catch (e) {
-      throw 'Unable to update your address selection. Try again later';
+      throw 'Не удалось обновить выбранный вами адрес. Попробуйте еще раз позже';
     }
   }
 }

@@ -29,7 +29,7 @@ class BrandRepository extends GetxController {
     } on PlatformException catch (e) {
       throw e.message!;
     } catch (e) {
-      throw 'Something Went Wrong! Please try again.';
+      throw 'Что-то пошло не так! Пожалуйста, попробуйте снова.';
     }
   }
 
@@ -47,7 +47,7 @@ class BrandRepository extends GetxController {
     } on PlatformException catch (e) {
       throw e.message!;
     } catch (e) {
-      throw 'Something Went Wrong! Please try again.';
+      throw 'Что-то пошло не так! Пожалуйста, попробуйте снова.';
     }
   }
 
@@ -75,7 +75,7 @@ class BrandRepository extends GetxController {
     } on PlatformException catch (e) {
       throw e.message!;
     } catch (e) {
-      throw 'Something Went Wrong! Please try again.';
+      throw 'Что-то пошло не так! Пожалуйста, попробуйте снова.';
     }
   }
 

@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:sharberry_shop/features/shop/screens/home/home.dart';
 
 import 'features/personalization/screens/setting/settings.dart';
 import 'features/shop/screens/favourites/favourite.dart';
+import 'features/shop/screens/home/home.dart';
 import 'features/shop/screens/store/store.dart';
 import 'utils/constants/colors.dart';
 import 'utils/helpers/helper_functions.dart';

@@ -17,14 +17,14 @@ class AllBrandsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = BrandController.instance;
     return Scaffold(
-      appBar: const TAppBar(showBackArrow: true, title: Text('Бренд')),
+      appBar: const TAppBar(showBackArrow: true, title: Text('Brand')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               /// Sub Categories
-              const TSectionHeading(title: 'Бренды', showActionButton: false),
+              const TSectionHeading(title: 'Brands', showActionButton: false),
               const SizedBox(height: TSizes.spaceBtwItems),
 
               /// -- Brands
@@ -35,7 +35,7 @@ class AllBrandsScreen extends StatelessWidget {
 
                   // Check if there are no featured categories found
                   if (controller.allBrands.isEmpty) {
-                    return Center(child: Text('Данные не найдены!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+                    return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
                   } else {
                     /// Data Found
                     return TGridLayout(

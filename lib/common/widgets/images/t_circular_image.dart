@@ -6,7 +6,6 @@ import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
 import '../shimmers/shimmer.dart';
 
-
 class TCircularImage extends StatelessWidget {
   const TCircularImage({
     super.key,

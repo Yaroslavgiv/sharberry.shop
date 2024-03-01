@@ -52,6 +52,7 @@ dependencies:
   firebase_storage: ^11.5.1
   google_sign_in: ^6.1.6
   flutter_facebook_auth: ^6.0.2
+  flutter_staggered_animations: ^1.1.1
 
 
 

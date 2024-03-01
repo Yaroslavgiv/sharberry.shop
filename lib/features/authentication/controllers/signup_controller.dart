@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/repositories/authentication/authentication_repository.dart';
-// import '../../../data/repositories/user/user_repository.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/helpers/network_manager.dart';
 import '../../personalization/controllers/user_controller.dart';
@@ -22,14 +21,17 @@ class SignupController extends GetxController {
   final username = TextEditingController(); // Controller for username input
   final password = TextEditingController(); // Controller for password input
   final firstName = TextEditingController(); // Controller for first name input
-  final phoneNumber = TextEditingController(); // Controller for phone number input
-  GlobalKey<FormState> signupFormKey = GlobalKey<FormState>(); // Form key for form validation
+  final phoneNumber =
+      TextEditingController(); // Controller for phone number input
+  GlobalKey<FormState> signupFormKey =
+      GlobalKey<FormState>(); // Form key for form validation
 
   /// -- SIGNUP
   Future<void> signup() async {
     try {
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('Мы обрабатываем вашу информацию...', TImages.docerAnimation);
+      TFullScreenLoader.openLoadingDialog(
+          'Мы обрабатываем вашу информацию...', TImages.docerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -49,12 +51,14 @@ class SignupController extends GetxController {
         TFullScreenLoader.stopLoading();
         TLoaders.warningSnackBar(
             title: 'Примите политику конфиденциальности',
-            message: 'Чтобы создать учетную запись, вы должны прочитать и принять Политику конфиденциальности и условия использования.');
+            message:
+                'Чтобы создать учетную запись, вы должны прочитать и принять Политику конфиденциальности и условия использования.');
         return;
       }
 
       // Register user in the Firebase Authentication & Save user data in the Firebase
-      await AuthenticationRepository.instance.registerWithEmailAndPassword(email.text.trim(), password.text.trim());
+      await AuthenticationRepository.instance.registerWithEmailAndPassword(
+          email.text.trim(), password.text.trim());
 
       // Save Authenticated user data in the Firebase Firestore
       final newUser = UserModel(
@@ -76,14 +80,17 @@ class SignupController extends GetxController {
       TFullScreenLoader.stopLoading();
 
       // Show Success Message
-      TLoaders.successSnackBar(title: 'Поздравляем', message: 'Ваш аккаунт был создан! Подтвердите ваш Email и продолжайте.');
+      TLoaders.successSnackBar(
+          title: 'Поздравляем',
+          message:
+              'Ваш аккаунт был создан! Подтвердите ваш Email и продолжайте.');
 
       // Move to Verify Email Screen
       Get.to(() => const VerifyEmailScreen());
     } catch (e) {
       // Show some Generic Error to the user
       TLoaders.errorSnackBar(title: 'Ошибка!', message: e.toString());
-      
+
       TFullScreenLoader.stopLoading();
     }
   }

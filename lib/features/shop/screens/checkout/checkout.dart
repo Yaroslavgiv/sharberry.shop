@@ -27,7 +27,7 @@ class CheckoutScreen extends StatelessWidget {
     final totalAmount = TPricingCalculator.calculateTotalPrice(subTotal, 'US');
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: const TAppBar(title: Text('Обзор заказа'), showBackArrow: true),
+      appBar: const TAppBar(title: Text('Состав заказа'), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -39,7 +39,7 @@ class CheckoutScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// -- Coupon TextField
-              const TCouponCode(),
+              // const TCouponCode(),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// -- Billing Section

@@ -28,7 +28,7 @@ class CategoryRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Что-то пошло не так! Пожалуйста, попробуйте снова';
     }
   }
 
@@ -43,7 +43,7 @@ class CategoryRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Что-то пошло не так! Пожалуйста, попробуйте снова';
     }
   }
 
@@ -72,7 +72,7 @@ class CategoryRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Что-то пошло не так! Пожалуйста, попробуйте снова';
     }
   }
 
@@ -89,7 +89,7 @@ class CategoryRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong. Please try again';
+      throw 'Что-то пошло не так! Пожалуйста, попробуйте снова';
     }
   }
 }

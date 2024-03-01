@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -32,7 +31,9 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         title: Text('Поиск', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [TextButton(onPressed: () => Get.back(), child: const Text('Закрыть'))],
+        actions: [
+          TextButton(onPressed: () => Get.back(), child: const Text('Закрыть'))
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -48,9 +49,13 @@ class SearchScreen extends StatelessWidget {
                   Expanded(
                     child: TextFormField(
                       autofocus: true,
-                      onChanged: (query) =>
-                          searchController.searchProducts(query, sortingOption: searchController.selectedSortingOption.value),
-                      decoration: const InputDecoration(prefixIcon: Icon(Iconsax.search_normal), hintText: 'Поиск'),
+                      onChanged: (query) => searchController.searchProducts(
+                          query,
+                          sortingOption:
+                              searchController.selectedSortingOption.value),
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Iconsax.search_normal),
+                          hintText: 'Поиск'),
                     ),
                   ),
                   const SizedBox(width: TSizes.spaceBtwItems),
@@ -58,7 +63,8 @@ class SearchScreen extends StatelessWidget {
                   /// Filter
                   OutlinedButton(
                     onPressed: () => filterModalBottomSheet(context),
-                    style: OutlinedButton.styleFrom(side: const BorderSide(color: Colors.grey)),
+                    style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Colors.grey)),
                     child: const Icon(Iconsax.setting, color: Colors.grey),
                   ),
                 ],
@@ -74,7 +80,8 @@ class SearchScreen extends StatelessWidget {
                     searchController.searchResults.isNotEmpty
                         ? TGridLayout(
                             itemCount: searchController.searchResults.length,
-                            itemBuilder: (_, index) => TProductCardVertical(product: searchController.searchResults[index]),
+                            itemBuilder: (_, index) => TProductCardVertical(
+                                product: searchController.searchResults[index]),
                           )
                         : brandsAndCategories(context),
               ),
@@ -101,7 +108,8 @@ class SearchScreen extends StatelessWidget {
         Obx(
           () {
             // Check if categories are still loading
-            if (brandController.isLoading.value) return const TCategoryShimmer();
+            if (brandController.isLoading.value)
+              return const TCategoryShimmer();
 
             /// Data Found
             return Wrap(
@@ -114,8 +122,13 @@ class SearchScreen extends StatelessWidget {
                             image: brand.image,
                             title: brand.name,
                             isNetworkImage: true,
-                            textColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
-                            backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                            textColor: THelperFunctions.isDarkMode(context)
+                                ? TColors.white
+                                : TColors.dark,
+                            backgroundColor:
+                                THelperFunctions.isDarkMode(context)
+                                    ? TColors.darkerGrey
+                                    : TColors.light,
                           ),
                         ),
                       ))
@@ -135,25 +148,33 @@ class SearchScreen extends StatelessWidget {
         Obx(
           () {
             // Check if categories are still loading
-            if (categoryController.isLoading.value) return const TSearchCategoryShimmer();
+            if (categoryController.isLoading.value)
+              return const TSearchCategoryShimmer();
 
             // Check if there are no featured categories found
             if (categoryController.allCategories.isEmpty) {
-              return Center(child: Text('Данные отсутствуют!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+              return Center(
+                  child: Text('Данные отсутствуют!',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .apply(color: Colors.white)));
             } else {
               /// Data Found
               // Display a horizontal list of featured categories with images and text
               final categories = categoryController.allCategories;
               return ListView.separated(
                 physics: const NeverScrollableScrollPhysics(),
-                separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwItems),
+                separatorBuilder: (_, __) =>
+                    const SizedBox(height: TSizes.spaceBtwItems),
                 itemCount: categories.length,
                 shrinkWrap: true,
                 itemBuilder: (_, index) => GestureDetector(
                   onTap: () => Get.to(
                     () => AllProducts(
                       title: categories[index].name,
-                      futureMethod: categoryController.getCategoryProducts(categoryId: categories[index].id),
+                      futureMethod: categoryController.getCategoryProducts(
+                          categoryId: categories[index].id),
                     ),
                   ),
                   child: Row(
@@ -199,14 +220,17 @@ class SearchScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const TSectionHeading(title: 'Filter', showActionButton: false),
-                  IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.close_square))
+                  const TSectionHeading(
+                      title: 'Фильтр', showActionButton: false),
+                  IconButton(
+                      onPressed: () => Get.back(),
+                      icon: const Icon(Iconsax.close_square))
                 ],
               ),
               const SizedBox(height: TSizes.spaceBtwSections / 2),
 
               /// Sort
-              Text('Sort by', style: Theme.of(context).textTheme.titleLarge),
+              Text('Сортировать по', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: TSizes.spaceBtwItems / 2),
 
               _buildSortingDropdown(),
@@ -214,27 +238,29 @@ class SearchScreen extends StatelessWidget {
 
               /// Categories
 
-              Text('Category', style: Theme.of(context).textTheme.titleLarge),
+              Text('Категории', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: TSizes.spaceBtwItems),
               _buildCategoryList(),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Sort by Radios
-              Text('Pricing', style: Theme.of(context).textTheme.titleLarge),
+              Text('Сортировка по цене', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: TSizes.spaceBtwItems / 2),
               Row(
                 children: [
                   Expanded(
                     child: TextFormField(
-                      onChanged: (value) => searchController.minPrice.value = double.parse(value),
-                      decoration: const InputDecoration(hintText: '\$ Lowest'),
+                      onChanged: (value) =>
+                          searchController.minPrice.value = double.parse(value),
+                      decoration: const InputDecoration(hintText: '\₽ минимум'),
                     ),
                   ),
                   const SizedBox(width: TSizes.spaceBtwItems),
                   Expanded(
                     child: TextFormField(
-                      onChanged: (value) => searchController.maxPrice.value = double.parse(value),
-                      decoration: const InputDecoration(hintText: '\$ Highest'),
+                      onChanged: (value) =>
+                          searchController.maxPrice.value = double.parse(value),
+                      decoration: const InputDecoration(hintText: '\₽ максимум'),
                     ),
                   ),
                 ],
@@ -247,7 +273,7 @@ class SearchScreen extends StatelessWidget {
                     searchController.search();
                     Get.back();
                   },
-                  child: const Text('Apply'),
+                  child: const Text('Применять'),
                 ),
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
@@ -265,10 +291,12 @@ class SearchScreen extends StatelessWidget {
         onChanged: (String? newValue) {
           if (newValue != null) {
             searchController.selectedSortingOption.value = newValue;
-            searchController.search(); // Trigger the search when the sorting option changes
+            searchController
+                .search(); // Trigger the search when the sorting option changes
           }
         },
-        items: searchController.sortingOptions.map<DropdownMenuItem<String>>((String value) {
+        items: searchController.sortingOptions
+            .map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
@@ -290,7 +318,9 @@ class SearchScreen extends StatelessWidget {
   }
 
   Widget _buildCategoryTile(CategoryModel category) {
-    return category.parentId.isEmpty ? Obx(() => _buildParentCategoryTile(category)) : const SizedBox.shrink();
+    return category.parentId.isEmpty
+        ? Obx(() => _buildParentCategoryTile(category))
+        : const SizedBox.shrink();
   }
 
   Widget _buildParentCategoryTile(CategoryModel category) {
@@ -301,8 +331,12 @@ class SearchScreen extends StatelessWidget {
   }
 
   List<Widget> _buildSubCategories(String parentId) {
-    List<CategoryModel> subCategories = categoryController.allCategories.where((cat) => cat.parentId == parentId).toList();
-    return subCategories.map((subCategory) => _buildSubCategoryTile(subCategory)).toList();
+    List<CategoryModel> subCategories = categoryController.allCategories
+        .where((cat) => cat.parentId == parentId)
+        .toList();
+    return subCategories
+        .map((subCategory) => _buildSubCategoryTile(subCategory))
+        .toList();
   }
 
   Widget _buildSubCategoryTile(CategoryModel category) {

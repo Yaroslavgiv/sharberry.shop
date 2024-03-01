@@ -69,7 +69,10 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
               Center(
                 child: TextButton(
-                    onPressed: () => controller.deleteAccountWarningPopup(),
+                    onPressed: () { 
+                      controller.logout();
+                      
+                      },
                     child: const Text('Выйти с аккаунта', style: TextStyle(color: Colors.red))),
               )
             ],

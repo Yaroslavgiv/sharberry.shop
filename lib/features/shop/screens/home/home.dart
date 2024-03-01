@@ -13,10 +13,8 @@ import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/device/device_utility.dart';
 import '../../controllers/product/product_controller.dart';
 import '../all_products/all_products.dart';
-import 'widgets/header_categories.dart';
-import 'widgets/header_search_container.dart';
-import 'widgets/home_appbar.dart';
-import 'widgets/promo_slider.dart';
+import 'widgets/widgets_home.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,6 +31,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: TSizes.lg),
                   /// -- Appbar
                   THomeAppBar(),
                   SizedBox(height: TSizes.spaceBtwSections),

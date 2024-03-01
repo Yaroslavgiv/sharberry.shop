@@ -28,7 +28,7 @@ class BannerRepository extends GetxController {
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw 'Something went wrong while fetching Banners.';
+      throw 'Что-то пошло не так при загрузке баннеров.';
     }
   }
 

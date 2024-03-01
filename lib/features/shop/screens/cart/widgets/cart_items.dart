@@ -27,7 +27,8 @@ class TCartItems extends StatelessWidget {
           shrinkWrap: true,
           itemCount: cartItems.length,
           physics: const NeverScrollableScrollPhysics(),
-          separatorBuilder: (context, index) => const SizedBox(height: TSizes.spaceBtwSections),
+          separatorBuilder: (context, index) =>
+              const SizedBox(height: TSizes.spaceBtwSections),
           itemBuilder: (context, index) {
             return Obx(
               () {
@@ -36,7 +37,8 @@ class TCartItems extends StatelessWidget {
                   children: [
                     /// -- Cart Items
                     TCartItem(item: item),
-                    if (showAddRemoveButtons) const SizedBox(height: TSizes.spaceBtwItems),
+                    if (showAddRemoveButtons)
+                      const SizedBox(height: TSizes.spaceBtwItems),
 
                     /// -- Add Remove Buttons and Price Total
                     if (showAddRemoveButtons)
@@ -55,17 +57,26 @@ class TCartItems extends StatelessWidget {
                                 height: 32,
                                 iconSize: TSizes.md,
                                 addBackgroundColor: TColors.primary,
-                                removeForegroundColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.black,
-                                removeBackgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                                removeForegroundColor:
+                                    THelperFunctions.isDarkMode(context)
+                                        ? TColors.white
+                                        : TColors.black,
+                                removeBackgroundColor:
+                                    THelperFunctions.isDarkMode(context)
+                                        ? TColors.darkerGrey
+                                        : TColors.light,
                                 quantity: item.quantity,
                                 add: () => cartController.addOneToCart(item),
-                                remove: () => cartController.removeOneFromCart(item),
+                                remove: () =>
+                                    cartController.removeOneFromCart(item),
                               ),
                             ],
                           ),
 
                           /// -- Product total price
-                          TProductPriceText(price: (item.price * item.quantity).toStringAsFixed(1)),
+                          TProductPriceText(
+                              price: (item.price * item.quantity)
+                                  .toStringAsFixed(1)),
                         ],
                       )
                   ],
